@@ -1,0 +1,23 @@
+{
+  "name": "v_lidator",
+  "version": "1.0.0",
+  "description": "Data V[a]lidator => v_lidator 😁",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/V-core9/v_lidator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/V-core9/v_lidator/issues"
+  },
+  "homepage": "https://github.com/V-core9/v_lidator#readme",
+  "devDependencies": {
+    "jest": "^27.3.1"
+  }
+}
