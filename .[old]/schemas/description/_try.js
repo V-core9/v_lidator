@@ -1,0 +1,2 @@
+const descriptionSchema = require('.');
+
