@@ -10,8 +10,14 @@ class $_ {
       return this._value;
     };
 
+    this.options = require(`../definitions/${this.type()}`);
+    this.valid = (value) => {
+      return (this.options.format.test(value) && ((typeof this.options.length === "undefined") ? true : ((this.options.length.min <= value.toString().length) && (value.toString().length <= this.options.length.max))));
+    };
+
     this.accepts = (value) => {
-      return (value !== undefined) ? true : false;
+      if (typeof value === 'undefined') return false;
+      return (this.valid(value));
     };
 
     this.set = (value = undefined) => {
@@ -22,10 +28,10 @@ class $_ {
       } else {
         return false;
       }
-      
+
     };
 
-    this.set( value );
+    this.set(value);
   }
 }
 

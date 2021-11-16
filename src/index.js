@@ -1,7 +1,8 @@
+
+
 module.exports = {
-  email:require('./classes/email'),
-  first_name:require('./classes/first_name'),
-  last_name:require('./classes/last_name'),
-  short_description:require('./classes/short_description'),
-  title:require('./classes/title')
+  v_email : require('./classes/v_email'),
+  v_name : require('./classes/v_name'),
+  v_text : require('./classes/v_text'),
+  v_title : require('./classes/v_title'),
 };

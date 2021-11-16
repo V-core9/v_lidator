@@ -1,35 +1,35 @@
-const {first_name} = require('../src');
+const { v_name } = require('../src');
 
+const f_name = new v_name();
 
-
-test('first_name is UNDEFINED', () => {
-  expect(first_name.get()).toBe(undefined);
+test('f_name is UNDEFINED', () => {
+  expect(f_name.get()).toBe(undefined);
 });
 
-test('first_name.set to TEXT', () => {
-  expect(first_name.set('YEA WTF Some Text')).toBe(true);
+test('f_name.set to TEXT', () => {
+  expect(f_name.set('YEA WTF Some Text')).toBe(true);
 });
 
-test('first_name.set to NUMBER', () => {
-  expect(first_name.set(12335456787)).toBe(true);
+test('f_name.set to NUMBER', () => {
+  expect(f_name.set(12335456787)).toBe(false);
 });
 
-test('first_name.set to NUMBER', () => {
-  expect(first_name.set(95126984)).toBe(true);
+test('f_name.set to NUMBER', () => {
+  expect(f_name.set(95126984)).toBe(false);
 });
 
-test('first_name.set to ALMOST first_name_01', () => {
-  expect(first_name.set("username123@mmm")).toBe(false);
+test('f_name.set to ALMOST f_name_01', () => {
+  expect(f_name.set("username123@mmm")).toBe(false);
 });
 
-test('first_name.set to ALMOST first_name_02', () => {
-  expect(first_name.set("username123!mmm.com")).toBe(false);
+test('f_name.set to ALMOST f_name_02', () => {
+  expect(f_name.set("username123!mmm.com")).toBe(false);
 });
 
-test('first_name.set to OK first_name 01', () => {
-  expect(first_name.set("user777@mmm.com")).toBe(false);
+test('f_name.set to OK f_name 01', () => {
+  expect(f_name.set("user777@mmm.com")).toBe(false);
 });
 
-test('first_name type', () => {
-  expect(first_name.type()).toBe('v_first_name');
+test('f_name type', () => {
+  expect(f_name.type()).toBe('v_name');
 });
