@@ -29,3 +29,8 @@ test('title.set to ALMOST title_02', () => {
 test('title.set to OK title 01', () => {
   expect(title.set("user777@mmm.com")).toBe(true);
 });
+
+
+test('baseTest type', () => {
+  expect(title.type()).toBe('v_title');
+});

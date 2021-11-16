@@ -1,22 +1,20 @@
-const v_base = require("../../v_base");
 
-class v_last_name extends v_base {
+const v__text = require("../../base/v__text");
+
+const last_name_definition = {
+  length: {
+    min: 0,
+    max: 32,
+  },
+  default: "",
+  format: /[_`!@#$%^&*()+=\[\]{};':"\\|,<>\/?~]/
+};
+
+class v_last_name extends v__text {
   constructor(val) {
     super(val);
 
-    this.options = {
-      length: {
-        min: 0,
-        max: 32,
-      },
-      default: "",
-      format: /[_`!@#$%^&*()+=\[\]{};':"\\|,<>\/?~]/
-    };
-
-    this.accepts = (value) => {
-      const lengthOf = value.length;
-      return (!this.options.format.test(value) && (this.options.length.min <= lengthOf) && (lengthOf <= this.options.length.max));
-    };
+    this.options = last_name_definition;
   }
 }
 

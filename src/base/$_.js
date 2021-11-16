@@ -1,5 +1,5 @@
 
-class v_base {
+class $_ {
   constructor(value) {
 
     this.type = () => {
@@ -29,4 +29,4 @@ class v_base {
   }
 }
 
-module.exports = v_base;
+module.exports = $_;

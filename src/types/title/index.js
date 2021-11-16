@@ -1,17 +1,19 @@
-const v_base_text = require("../../v_base/_text");
+const v__text = require("../../base/v__text");
 
-class v_title extends v_base_text {
+const title_definition = {
+  length: {
+    min: 0,
+    max: 320,
+  },
+  default: "",
+  format: /[]/
+};
+
+class v_title extends v__text {
   constructor(val) {
     super(val);
 
-    this.options = {
-      length: {
-        min: 0,
-        max: 320,
-      },
-      default: "",
-      format: /[]/
-    };
+    this.options = title_definition;
 
   }
 }

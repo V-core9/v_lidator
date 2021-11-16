@@ -11,11 +11,11 @@ test('last_name.set to TEXT', () => {
 });
 
 test('last_name.set to NUMBER', () => {
-  expect(last_name.set(12335456787)).toBe(false);
+  expect(last_name.set(12335456787)).toBe(true);
 });
 
 test('last_name.set to NUMBER', () => {
-  expect(last_name.set(95126984)).toBe(false);
+  expect(last_name.set(95126984)).toBe(true);
 });
 
 test('last_name.set to ALMOST last_name_01', () => {
@@ -28,4 +28,8 @@ test('last_name.set to ALMOST last_name_02', () => {
 
 test('last_name.set to OK last_name 01', () => {
   expect(last_name.set("user777@mmm.com")).toBe(false);
+});
+
+test('last_name type', () => {
+  expect(last_name.type()).toBe('v_last_name');
 });

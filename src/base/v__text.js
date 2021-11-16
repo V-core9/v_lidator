@@ -1,9 +1,9 @@
-const v_base = require(".");
+const $_ = require("./$_");
 
-class v_base_text extends v_base {
+class v__text extends $_ {
 
-  constructor(vIN) {
-    super(vIN);
+  constructor(value) {
+    super(value);
 
 
     this.validLength = (value) => {
@@ -25,4 +25,4 @@ class v_base_text extends v_base {
   }
 }
 
-module.exports = v_base_text;
+module.exports = v__text;

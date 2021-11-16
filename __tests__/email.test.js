@@ -29,3 +29,7 @@ test('email.set to ALMOST email_02', () => {
 test('email.set to OK email 01', () => {
   expect(email.set("user777@mmm.com")).toBe(true);
 });
+
+test('email type', () => {
+  expect(email.type()).toBe('v_email');
+});

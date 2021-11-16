@@ -1,6 +1,6 @@
-const v_base = require("../../v_base");
+const v__text = require("../../base/v__text");
 
-class v_email extends v_base {
+class v_email extends v__text {
   constructor(val) {
     super(val);
 
