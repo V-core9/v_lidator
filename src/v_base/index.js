@@ -11,17 +11,18 @@ class v_base {
     };
 
     this.accepts = (value) => {
-      return true;
+      return (value !== undefined) ? true : false;
     };
 
     this.set = (value = undefined) => {
-      if (value !== undefined && this.accepts(value)) {
+      if (this.accepts(value)) {
         this._value = value;
         this._updated_timestamp = Date.now();
         return true;
       } else {
         return false;
       }
+      
     };
 
     this.set( value );

@@ -1,16 +1,18 @@
-const v_base = require("../../v_base");
+const v_base_text = require("../../v_base/_text");
 
-class v_title extends v_base {
+class v_title extends v_base_text {
   constructor(val) {
     super(val);
 
     this.options = {
-      format: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      length: {
+        min: 0,
+        max: 320,
+      },
+      default: "",
+      format: /[]/
     };
 
-    this.accepts = (value) => {
-      return this.options.format.test(value);
-    };
   }
 }
 

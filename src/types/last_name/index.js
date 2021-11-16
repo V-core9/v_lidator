@@ -1,6 +1,6 @@
 const v_base = require("../../v_base");
 
-class v_first_name extends v_base {
+class v_last_name extends v_base {
   constructor(val) {
     super(val);
 
@@ -20,6 +20,6 @@ class v_first_name extends v_base {
   }
 }
 
-const first_name = new v_first_name();
+const last_name = new v_last_name();
 
-module.exports = first_name;
+module.exports = last_name;
