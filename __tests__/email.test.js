@@ -1,4 +1,4 @@
-const email = require('../src/types/email');
+const {email} = require('../src');
 
 
 

@@ -1,4 +1,4 @@
-const title = require('../src/types/title');
+const {title} = require('../src');
 
 
 

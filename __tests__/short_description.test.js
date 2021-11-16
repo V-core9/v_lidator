@@ -1,5 +1,4 @@
-const short_description = require('../src/types/short_description');
-
+const {short_description} = require('../src');
 
 
 test('short_description is UNDEFINED', () => {

@@ -1,4 +1,4 @@
-const last_name = require('../src/types/last_name');
+const {last_name} = require('../src');
 
 
 
