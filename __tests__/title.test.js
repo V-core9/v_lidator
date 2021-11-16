@@ -1,6 +1,6 @@
-const {title} = require('../src');
+const {v_title} = require('../src');
 
-
+const title = new v_title();
 
 test('title is UNDEFINED', () => {
   expect(title.get()).toBe(undefined);

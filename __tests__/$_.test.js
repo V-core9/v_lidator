@@ -1,4 +1,4 @@
-const $_ = require('../src/base/$_');
+const $_ = require('../src/classes/$_');
 
 var baseTest = new $_();
 

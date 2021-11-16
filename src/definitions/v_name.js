@@ -4,5 +4,5 @@ module.exports = {
     max: 32,
   },
   default: "",
-  format: /[_`!@#$%^&*()+=\[\]{};':"\\|,<>\/?~]/
+  format: /qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890\ -_/
 };
