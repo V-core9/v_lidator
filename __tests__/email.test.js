@@ -38,6 +38,10 @@ test('email.set to [1@live.co]', () => {
   expect(vemail.set("1@live.co")).toBe(true);
 });
 
+test('email.set to [1@live.co]', () => {
+  expect(vemail.get()).toBe("1@live.co");
+});
+
 test('email type', () => {
   expect(vemail.type()).toBe('v_lidator');
 });

@@ -9,5 +9,6 @@ const v_email_definition =  {
   format: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 };
 
-module.exports = new v_lidator(v_email_definition);
+const v_email =  new v_lidator(v_email_definition);
 
+module.exports = v_email;
