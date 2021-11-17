@@ -19,5 +19,8 @@
   "homepage": "https://github.com/V-core9/v_lidator#readme",
   "devDependencies": {
     "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "v_file_system": "^1.0.1"
   }
 }
