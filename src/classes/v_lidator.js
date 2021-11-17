@@ -1,6 +1,6 @@
 
-class $_ {
-  constructor(value) {
+class v_lidator {
+  constructor(definition) {
 
     this.type = () => {
       return this.constructor.name;
@@ -10,7 +10,6 @@ class $_ {
       return this._value;
     };
 
-    this.options = require(`../definitions/${this.type()}`);
     this.valid = (value) => {
       return (this.options.format.test(value) && ((typeof this.options.length === "undefined") ? true : ((this.options.length.min <= value.toString().length) && (value.toString().length <= this.options.length.max))));
     };
@@ -31,8 +30,8 @@ class $_ {
 
     };
 
-    this.set(value);
+    this.options = (definition);
   }
 }
 
-module.exports = $_;
+module.exports = v_lidator;

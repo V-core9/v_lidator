@@ -1,36 +1,40 @@
-const {v_title} = require('../src');
+const {title} = require('../src');
 
-const title = new v_title();
+const vtitle = title;
 
 test('title is UNDEFINED', () => {
-  expect(title.get()).toBe(undefined);
+  expect(vtitle.get()).toBe(undefined);
 });
 
-test('title.set to TEXT', () => {
-  expect(title.set('YEA WTF Some Text')).toBe(true);
+test('vtitle.set to TEXT', () => {
+  expect(vtitle.set('YEA WTF Some Text')).toBe(true);
+});
+
+test('vtitle.set to TEXT', () => {
+  expect(vtitle.set('YEA WTF')).toBe(true);
 });
 
 test('title.set to NUMBER', () => {
-  expect(title.set(12335456787)).toBe(true);
+  expect(vtitle.set(12335456787)).toBe(true);
 });
 
 test('title.set to NUMBER', () => {
-  expect(title.set(95126984)).toBe(true);
+  expect(vtitle.set(95126984)).toBe(true);
 });
 
 test('title.set to ALMOST title_01', () => {
-  expect(title.set("username123@mmm")).toBe(true);
+  expect(vtitle.set("username123@mmm")).toBe(true);
 });
 
 test('title.set to ALMOST title_02', () => {
-  expect(title.set("username123!mmm.com")).toBe(true);
+  expect(vtitle.set("username123!mmm.com")).toBe(true);
 });
 
 test('title.set to OK title 01', () => {
-  expect(title.set("user777@mmm.com")).toBe(true);
+  expect(vtitle.set("user777@mmm.com")).toBe(true);
 });
 
 
 test('baseTest type', () => {
-  expect(title.type()).toBe('v_title');
+  expect(vtitle.type()).toBe('v_lidator');
 });

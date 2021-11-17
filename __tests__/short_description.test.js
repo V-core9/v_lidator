@@ -1,6 +1,6 @@
-const {v_text} = require('../src');
+const {text} = require('../src');
 
-const short_description = new v_text();
+const short_description = text;
 
 
 test('short_description is UNDEFINED', () => {
@@ -33,5 +33,5 @@ test('short_description.set to OK short_description 01', () => {
 
 
 test('short_description type', () => {
-  expect(short_description.type()).toBe('v_text');
+  expect(short_description.type()).toBe('v_lidator');
 });

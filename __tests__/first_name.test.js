@@ -1,6 +1,6 @@
-const { v_name } = require('../src');
+const { name } = require('../src');
 
-const f_name = new v_name();
+let f_name = name;
 
 test('f_name is UNDEFINED', () => {
   expect(f_name.get()).toBe(undefined);
@@ -8,6 +8,10 @@ test('f_name is UNDEFINED', () => {
 
 test('f_name.set to TEXT', () => {
   expect(f_name.set('YEA WTF Some Text')).toBe(true);
+});
+
+test('f_name.set to TEXT', () => {
+  expect(f_name.set('YEA WTF')).toBe(true);
 });
 
 test('f_name.set to NUMBER', () => {
@@ -31,5 +35,5 @@ test('f_name.set to OK f_name 01', () => {
 });
 
 test('f_name type', () => {
-  expect(f_name.type()).toBe('v_name');
+  expect(f_name.type()).toBe('v_lidator');
 });

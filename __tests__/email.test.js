@@ -1,43 +1,43 @@
-const {v_email} = require('../src');
+const {email} = require('../src');
 
-const email = new v_email();
+const vemail = email;
 
 test('email is UNDEFINED', () => {
-  expect(email.get()).toBe(undefined);
+  expect(vemail.get()).toBe(undefined);
 });
 
 test('email.set to "YEA WTF Some Text"', () => {
-  expect(email.set('YEA WTF Some Text')).toBe(false);
+  expect(vemail.set('YEA WTF Some Text')).toBe(false);
 });
 
 test('email.set to [12335456787]', () => {
-  expect(email.set(12335456787)).toBe(false);
+  expect(vemail.set(12335456787)).toBe(false);
 });
 
 test('email.set to [95126984]', () => {
-  expect(email.set(95126984)).toBe(false);
+  expect(vemail.set(95126984)).toBe(false);
 });
 
 test('email.set to [username123@mmm]', () => {
-  expect(email.set("username123@mmm")).toBe(false);
+  expect(vemail.set("username123@mmm")).toBe(false);
 });
 
 test('email.set to [username123!mmm.com]', () => {
-  expect(email.set("username123!mmm.com")).toBe(false);
+  expect(vemail.set("username123!mmm.com")).toBe(false);
 });
 
 test('email.set to [user777@mmm.com]', () => {
-  expect(email.set("user777@mmm.com")).toBe(true);
+  expect(vemail.set("user777@mmm.com")).toBe(true);
 });
 
 test('email.set to [@gmail.com]', () => {
-  expect(email.set("@gmail.com")).toBe(false);
+  expect(vemail.set("@gmail.com")).toBe(false);
 });
 
 test('email.set to [1@live.co]', () => {
-  expect(email.set("1@live.co")).toBe(true);
+  expect(vemail.set("1@live.co")).toBe(true);
 });
 
 test('email type', () => {
-  expect(email.type()).toBe('v_email');
+  expect(vemail.type()).toBe('v_lidator');
 });

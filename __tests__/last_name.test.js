@@ -1,6 +1,6 @@
-const { v_name } = require('../src');
+const { name } = require('../src');
 
-const l_name = new v_name();
+const l_name = name;
 
 
 test('l_name is UNDEFINED', () => {
@@ -9,6 +9,10 @@ test('l_name is UNDEFINED', () => {
 
 test('l_name.set to TEXT', () => {
   expect(l_name.set('YEA WTF Some Text')).toBe(true);
+});
+
+test('l_name.set to TEXT', () => {
+  expect(l_name.set('YEA WTF')).toBe(true);
 });
 
 test('l_name.set to NUMBER', () => {
@@ -31,6 +35,14 @@ test('l_name.set to OK l_name 01', () => {
   expect(l_name.set("user777@mmm.com")).toBe(false);
 });
 
+test('l_name.set to OK l_name 01', () => {
+  expect(l_name.set("Grubber")).toBe(true);
+});
+
+test('l_name.set to OK l_name 01', () => {
+  expect(l_name.set("Vuletic")).toBe(true);
+});
+
 test('l_name type', () => {
-  expect(l_name.type()).toBe('v_name');
+  expect(l_name.type()).toBe('v_lidator');
 });

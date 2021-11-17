@@ -1,9 +1,15 @@
-const $_ = require("./$_");
+const v_lidator = require("./v_lidator");
 
-class v_name extends $_ {
-  constructor(value) {
-    super(value);
-  }
-}
+const v_name_definition =  {
+  length: {
+    min: 6,
+    max: 64,
+  },
+  default: "",
+  format: /^[A-Za-z][A-Za-z0-9.'\- ]{5,63}$/
+};
 
-module.exports = v_name;
+const name = new v_lidator(v_name_definition);
+
+
+module.exports = name;
