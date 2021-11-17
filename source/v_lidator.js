@@ -2,7 +2,7 @@ const v_fs = require('v_file_system');
 const path = require('path');
 
 
-schemeTemplate = (data) => {
+scheme_template = (data) => {
   return {
     name : data.name,
     created_ts: Date.now(),
@@ -17,7 +17,7 @@ const v_lidator = {
   $_schemesDir: path.join(__dirname,"./schemas"),
 
   new: async (name, items = [] )=>{
-    const resp = await v_fs.promise.write(path.join(v_lidator.$_schemesDir, name+'.json'), JSON.stringify(schemeTemplate({name, items})));
+    const resp = await v_fs.promise.write(path.join(v_lidator.$_schemesDir, name+'.json'), JSON.stringify(scheme_template({name, items})));
     v_lidator.load();
     return resp;
   },
