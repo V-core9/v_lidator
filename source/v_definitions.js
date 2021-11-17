@@ -32,7 +32,7 @@ const v_definitions = {
 
   new: async (name, type, length = null, forbiddenChars = []  )=>{
     const resp = await v_fs.promise.write(path.join(v_definitions.$_defDir , name+'.json'), JSON.stringify(definition_template({name, type, length, forbiddenChars})));
-    v_lidator.load();
+    v_definitions.load();
     return resp;
   },
 };
