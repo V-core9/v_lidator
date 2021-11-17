@@ -1,6 +1,6 @@
-const v_email = require("./v_email");
+const email = require("./v_email");
 
-const test01 = new v_email();
+const test01 = email;
 console.log(test01);
 
 var errorMonitor = [];
