@@ -11,6 +11,8 @@ schemeTemplate = (data) => {
 };
 
 const v_lidator = {
+  $_cacheInterval: 120000,
+  $_lastLoadTs: 0,
   $_schemes : [],
   $_schemesDir: path.join(__dirname,"./schemas"),
 
@@ -22,15 +24,24 @@ const v_lidator = {
   
   load: async () => {
     v_lidator.$_schemes = await v_fs.promise.listDir(v_lidator.$_schemesDir);
+    v_lidator.$_lastLoadTs = Date.now();
     return  v_lidator.$_schemes;
   },
 
+  checkCacheInterval : async () => {
+    return ((Date.now() - v_lidator.$_lastLoadTs) > v_lidator.$_cacheInterval ) ? true : false;
+  },
+
   list: async ()=> {
-    return  await v_lidator.$_schemes;
+    const resp1 = await v_lidator.checkCacheInterval();
+    if ( ( v_lidator.count() === 0 ) || resp1 === true ){
+      await v_lidator.load();
+    }
+    return  v_lidator.$_schemes;
   },
 
   count: async ()=> {
-    return  await  v_lidator.$_schemes.length;
+    return  v_lidator.$_schemes.length;
   },
 
   remove: async (name)=> {

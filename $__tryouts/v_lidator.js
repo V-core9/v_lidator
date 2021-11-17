@@ -1,10 +1,10 @@
-const v_lidator = require('../source');
+const v_lidator = require('../source/v_lidator');
 
 mainTryout = async () => {
   console.time("MAIN_TRYOUT_ASYNC");
   // Here we either provide PATH to folder with SCHEMAS or put it into config in package.json
   // 1st lets load it by providing path to folder
-  console.log(await v_lidator.load());
+  //console.log(await v_lidator.load());
 
   // List of schemas
   console.log(await v_lidator.list());
@@ -41,7 +41,7 @@ mainTryout = async () => {
 
 };
 
-//mainTryout();
+mainTryout();
 
 
 v_Tryout = async () => {
@@ -62,4 +62,4 @@ v_Tryout = async () => {
   console.timeEnd("V_TRYOUT_WAT-WAT");
 };
 
-v_Tryout();
+//v_Tryout();
