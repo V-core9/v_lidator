@@ -1,14 +1,14 @@
 {
-  "name": "\"link\"",
+  "name": "link",
   "created_ts": "133445566",
   "items" : [
-    "\"id\"",
-    "\"name\"",
-    "\"description\"",
-    "\"URL\"",
-    "\"status\"",
-    "\"owner_id\"",
-    "\"created_ts\"",
-    "\"last_used\""
+    "id",
+    "name",
+    "description",
+    "URL",
+    "status",
+    "owner_id",
+    "created_ts",
+    "last_used"
   ]
 }

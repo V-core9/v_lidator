@@ -1,1 +1,15 @@
-{"name":"WUG","created_ts":1637130599240,"type":"string","length":{"min":2,"max":32},"forbiddenChars":["!","@","#","$"]}
+{
+  "name": "WUG",
+  "created_ts": 1637130599240,
+  "type": "string",
+  "length": {
+    "min": 2,
+    "max": 32
+  },
+  "forbiddenChars": [
+    "!",
+    "@",
+    "#",
+    "$"
+  ]
+}
