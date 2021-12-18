@@ -1,4 +1,4 @@
-const { v_database } = require("../../../index");
+const v_database = require("v_database");
 const user_schema = require('./schema');
 
 user_template = require('../templates/user');

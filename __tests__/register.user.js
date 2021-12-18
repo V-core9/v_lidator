@@ -3,7 +3,7 @@ const v_database  = require('v_database');
 const v_fs = require('v_file_system');
 const path = require("path");
 
-process.v.data_dir = path.join(__dirname, "../../$_REGISTER");
+process.v.data_dir = path.join(__dirname, "./$_REGISTER");
 v_fs.removeDirSy(process.v.data_dir, { recursive: true });
 
 v_fs.mkdirSy(process.v.data_dir);
@@ -12,7 +12,7 @@ v_fs.mkdirSy(process.v.data_dir);
 test('User register test 001 OK', async () => {
     const user_type = await v_database.type.new('users');
     const user_emails_type = await v_database.type.new('user_emails');
-    expect(await register({ username: 'yeaJ11', email: 'yeamiki11@gmail.com', password: '1234567890', password_confirm: '1234567890' })).toBe(true);
+    expect(await register({ username: username , email: 'yeamiki11@gmail.com', password: '1234567890', password_confirm: '1234567890' })).toBe(true);
 });
 
 test('User register test 002 OK', async () => {

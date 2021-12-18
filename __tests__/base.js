@@ -1,6 +1,6 @@
-const $_ = require('../src/');
+const {base} = require('../src/');
 
-var baseTest = new $_();
+var baseTest = new base();
 
 
 test('baseTest', () => {
@@ -19,5 +19,5 @@ test('baseTest get', () => {
 
 
 test('baseTest type', () => {
-  expect(baseTest.type()).toBe('$_');
+  expect(baseTest.type()).toBe('base');
 });

@@ -1,4 +1,4 @@
-const v_lidator  = require('../../index');
+const v_lidator  = require('../');
 const { test_data_list } = require("../_test-data/test_data_list");
 
 

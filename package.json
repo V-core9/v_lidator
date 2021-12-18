@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/V-core9/v_lidator#readme",
   "devDependencies": {
-    "jest": "^27.3.1"
+    "jest": "^27.3.1",
+    "v_database": "^0.0.24"
   }
 }
