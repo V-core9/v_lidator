@@ -1,6 +1,6 @@
 {
   "name": "v_rifier",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Data Validator => v_rifier 😁",
   "main": "index.js",
   "scripts": {
