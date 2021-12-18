@@ -10,6 +10,7 @@ v_fs.mkdirSy(process.v.data_dir);
 
 
 test('User register test 001 OK', async () => {
+    const username = 'yeaJ11';
     const user_type = await v_database.type.new('users');
     const user_emails_type = await v_database.type.new('user_emails');
     expect(await register({ username: username , email: 'yeamiki11@gmail.com', password: '1234567890', password_confirm: '1234567890' })).toBe(true);
