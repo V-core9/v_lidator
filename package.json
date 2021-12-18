@@ -1,10 +1,11 @@
 {
   "name": "v_lidator",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Data Validator => v_lidator 😁",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepack": "npm run test"
   },
   "repository": {
     "type": "git",
