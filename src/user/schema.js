@@ -1,6 +1,6 @@
 
 // [ 🩺 - Data Validator ]>- - - - - - -
-const v_lidator = require('../v_lidator');
+const v_rify = require('./v_rify');
 
 // [ 🔂 - user_schema ]>- - - - - - -
 const user_schema = {
@@ -14,7 +14,7 @@ const user_schema = {
     },
     validate: async (email) => {
       if (email.split('..').length === 1 && email.split('@').length === 2 && isNaN(email.split('@')[0])) {
-        return await v_lidator(user_schema.email, email);
+        return await v_rify(user_schema.email, email);
       } return [{"confirm": undefined, "input_value": email, "msg": user_schema.email.msg.error.format, "suggest": "Try removing special characters.", "type": "error"}];
     }
   },
@@ -33,7 +33,7 @@ const user_schema = {
     },
     validate: async (password, password_confirm) => {
       user_schema.password.confirm = password_confirm;
-      return await v_lidator(user_schema.password, password);
+      return await v_rify(user_schema.password, password);
     },
   },
   username: {
@@ -49,7 +49,7 @@ const user_schema = {
       }
     },
     validate: async (username) => {
-      return await v_lidator(user_schema.username, username);
+      return await v_rify(user_schema.username, username);
     }
   }
 };

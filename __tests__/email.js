@@ -1,6 +1,6 @@
-const v_lidator = require('../');
+const v_rifier = require('../');
 
-const email = new v_lidator.email();
+const email = new v_rifier.email();
 
 test('email is UNDEFINED', () => {
   expect(email.get()).toBe(undefined);

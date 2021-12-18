@@ -1,6 +1,6 @@
-const v_lidator = require('../');
+const v_rifier = require('../');
 
-const short_description = new v_lidator.text();
+const short_description = new v_rifier.text();
 
 
 test('short_description is UNDEFINED', () => {

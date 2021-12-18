@@ -1,3 +1,3 @@
-const v_lidator  = require("./src");
+const v_rifier  = require("./src");
 
-module.exports = v_lidator;
+module.exports = v_rifier;

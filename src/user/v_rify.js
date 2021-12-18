@@ -1,5 +1,5 @@
 //<[ 🩺 - cfg Validator ]>- - - - - - ->
-const v_lidator = async (cfg, data) => {
+const v_rify = async (cfg, data) => {
   var errorList = [];
   const len = String(data).length;
   if (typeof cfg.min !== 'undefined') if (len < cfg.min) errorList.push({ type: 'error', input_value: data, msg: cfg.msg.error.min, suggest: 'Minimum Length is [' + cfg.min + ']', confirm: cfg.confirm });
@@ -10,4 +10,4 @@ const v_lidator = async (cfg, data) => {
 };
 //<- - - - - - - - - - - - - - - - - - ->
 
-module.exports = v_lidator;
+module.exports = v_rify;
