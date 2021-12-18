@@ -1,7 +1,7 @@
 {
-  "name": "v_lidator",
-  "version": "0.0.0",
-  "description": "Data Validator => v_lidator 😁",
+  "name": "v_rifier",
+  "version": "0.0.1",
+  "description": "Data Validator => v_rifier 😁",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/V-core9/v_lidator.git"
+    "url": "git+https://github.com/V-core9/v_rifier.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/V-core9/v_lidator/issues"
+    "url": "https://github.com/V-core9/v_rifier/issues"
   },
-  "homepage": "https://github.com/V-core9/v_lidator#readme",
+  "homepage": "https://github.com/V-core9/v_rifier#readme",
   "devDependencies": {
     "jest": "^27.3.1",
     "v_database": "^0.0.24"
