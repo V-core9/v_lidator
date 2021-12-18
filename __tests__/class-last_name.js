@@ -8,7 +8,7 @@ test('l_name is UNDEFINED', () => {
 });
 
 test('l_name.set to TEXT', () => {
-  expect(l_name.set('YEA WTF Some Text')).toBe(true);
+  expect(l_name.set('YEA WTF Some Text')).toBe(false);
 });
 
 test('l_name.set to NUMBER', () => {

@@ -4,6 +4,7 @@ const v_fs = require('v_file_system');
 const path = require("path");
 
 process.v.data_dir = path.join(__dirname, "./$_REGISTER");
+process.v.log_to_console = false;
 v_fs.removeDirSy(process.v.data_dir, { recursive: true });
 
 v_fs.mkdirSy(process.v.data_dir);
@@ -11,8 +12,8 @@ v_fs.mkdirSy(process.v.data_dir);
 
 test('User register test 001 OK', async () => {
     const username = 'yeaJ11';
-    const user_type = await v_database.type.new('users');
-    const user_emails_type = await v_database.type.new('user_emails');
+    await v_database.type.new('users');
+    await v_database.type.new('user_emails');
     expect(await register({ username: username , email: 'yeamiki11@gmail.com', password: '1234567890', password_confirm: '1234567890' })).toBe(true);
 });
 
@@ -32,18 +33,18 @@ test('User register test 004 BAD [duplicate email]', async () => {
 
 const test_name005 = 'User register test 005 BAD [no confirm password]';
 test(test_name005, async () => {
-    console.time(test_name005);
+    //console.time(test_name005);
     var stats = await register({ username: 'yea_ZZZZ', email: 'yeamiki2211zz@gmail.com', password: '1234567890' });
-    console.timeEnd(test_name005);
+    //console.timeEnd(test_name005);
     expect(stats).toEqual([[{ "type": "error", "confirm": undefined, "input_value": "1234567890", "msg": "🚨 Confirmation Password Entry Does Not Match Password Provided.", "suggest": "Make them same." }]]);
 });
 
 
 const test_name006 = 'User register test 006';
 test(test_name006, async () => {
-    console.time(test_name006);
+    //console.time(test_name006);
     var stats = await register({ username: 'yea_mki11ZZZZZ', email: 'ZZyeamiki2211@gmail.com', password: 'Z1234567890', password_confirm: 'Z1234567890' });
-    console.timeEnd(test_name006);
+    //console.timeEnd(test_name006);
     expect(stats).toBe(true);
 });
 
