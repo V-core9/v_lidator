@@ -1,5 +1,5 @@
 const register = require('../src/user/register');
-const { v_database } = require('../../index');
+const v_database  = require('v_database');
 const v_fs = require('v_file_system');
 const path = require("path");
 
