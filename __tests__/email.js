@@ -1,10 +1,10 @@
 const v_rifier  = require('../');
-const { test_data_list } = require("../_test-data/test_data_list");
+const data = require("../_test-data/email.list");
 
 
-test_data_list.forEach(item => {
-  test('EMAIL  ?? [ ' + item.input.email + ' ]', async () => {
-    expect(await v_rifier.email(item.input.email)).toEqual((item.output.email === true) ? true : item.output.email(item.input.email));
+data.forEach(item => {
+  test('EMAIL  ?? [ ' + item.input + ' ]', async () => {
+    expect(await v_rifier.email(item.input)).toEqual((item.expect === true) ? true : item.expect(item.input));
   });
 });
 
