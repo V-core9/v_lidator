@@ -1,4 +1,4 @@
-const register = require('../user/register');
+const register = require('../src/user/register');
 const vDB = require('v_database');
 const v_fs = require('v_file_system');
 
