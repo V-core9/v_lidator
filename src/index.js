@@ -5,4 +5,5 @@ module.exports = {
   name : require('./class/name'),
   text : require('./class/text'),
   title : require('./class/title'),
+  username : require('./class/username'),
 };

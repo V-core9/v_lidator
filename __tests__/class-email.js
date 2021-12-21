@@ -153,3 +153,24 @@ test('email.set to [..]', () => {
 test('email.set to [DemoUser]', () => {
   expect(mail.set("DemoUser")).toBe(false);
 });
+
+
+const mail2 = new v_rifier.email('etasda@gmail.com');
+test('email2.get', () => {
+  expect(mail2.get()).toBe('etasda@gmail.com');
+});
+
+const mail3 = new v_rifier.email('etasda.@gmail.com');
+test('email3.get', () => {
+  expect(mail3.get()).toBe('etasda.@gmail.com');
+});
+
+const mail4 = new v_rifier.email('etas@da@gmail.com');
+test('email4.get', () => {
+  expect(mail4.get()).toBe(undefined);
+});
+
+const mail5 = new v_rifier.email('+WEQ23652@mail.com');
+test('email5.get', () => {
+  expect(mail5.get()).toBe(undefined);
+});
