@@ -1,4 +1,4 @@
-const user_schema = require('../src/user/schema.js');
+const password = require('../src/schema/password.js');
 
 //? PASSWORD ERRORS 
 const $_password = {
@@ -15,19 +15,19 @@ const $_password = {
     },
 
     minErr(string, confirm = undefined) {
-        return $_password._main({ err: user_schema.password.msg.error.min, hint: "Minimum Length is [6]" }, string, confirm);
+        return $_password._main({ err: password.msg.error.min, hint: "Minimum Length is [6]" }, string, confirm);
     },
 
     maxErr(string, confirm = undefined) {
-        return $_password._main({ err: user_schema.password.msg.error.max, hint: "Maximum Length is [32]" }, string, confirm);
+        return $_password._main({ err: password.msg.error.max, hint: "Maximum Length is [32]" }, string, confirm);
     },
 
     formatErr(string, confirm = undefined) {
-        return $_password._main({ err: user_schema.password.msg.error.format, hint: "Try removing special characters." }, string, confirm);
+        return $_password._main({ err: password.msg.error.format, hint: "Try removing special characters." }, string, confirm);
     },
 
     confirmErr(string, confirm = undefined) {
-        return $_password._main({ err: user_schema.password.msg.error.confirm, hint: "Make them same." }, string, confirm);
+        return $_password._main({ err: password.msg.error.confirm, hint: "Make them same." }, string, confirm);
     },
 
     minConfirmErr(string, confirm = undefined) {

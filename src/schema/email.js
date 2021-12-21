@@ -1,4 +1,4 @@
-const v_rify = require('../v_rify');
+const v_rify = require('../helpers/v_rify');
 
 const email_schema = {
   format: /^[A-Za-z0-9][A-Za-z0-9.]+@[^\s@]+\.[^\s@]+$/,
