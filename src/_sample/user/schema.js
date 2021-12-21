@@ -1,6 +1,6 @@
 
 // [ 🩺 - Data Validator ]>- - - - - - -
-const v_rify = require('./v_rify');
+const v_rify = require('../../v_rify');
 
 // [ 🔂 - user_schema ]>- - - - - - -
 const user_schema = {
