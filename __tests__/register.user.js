@@ -1,19 +1,19 @@
 const register = require('../src/user/register');
-const v_database  = require('v_database');
+const vDB  = require('v_database');
 const v_fs = require('v_file_system');
 const path = require("path");
 
-process.v.data_dir = path.join(__dirname, "./$_REGISTER");
-process.v.log_to_console = false;
-v_fs.removeDirSy(process.v.data_dir, { recursive: true });
+vDB.config.data_dir = path.join(__dirname, "./$_REGISTER");
+vDB.config.log_to_console = false;
+v_fs.removeDirSy(vDB.config.data_dir, { recursive: true });
 
-v_fs.mkdirSy(process.v.data_dir);
+v_fs.mkdirSy(vDB.config.data_dir);
 
 
 test('User register test 001 OK', async () => {
     const username = 'yeaJ11';
-    await v_database.type.new('users');
-    await v_database.type.new('user_emails');
+    await vDB.type.new('users');
+    await vDB.type.new('user_emails');
     expect(await register({ username: username , email: 'yeamiki11@gmail.com', password: '1234567890', password_confirm: '1234567890' })).toBe(true);
 });
 
@@ -49,18 +49,18 @@ test(test_name006, async () => {
 });
 
 test('User view 007', async () => {
-    expect(await v_database.item.view('users')).toEqual(["yeaJ11", "yea_mki11", "yea_mki11ZZZZZ"]);
+    expect(await vDB.item.view('users')).toEqual(["yeaJ11", "yea_mki11", "yea_mki11ZZZZZ"]);
 });
 
 test('User view with id 008', async () => {
-    var compar = JSON.parse(v_fs.readSy(process.v.data_dir + '/users/yeaJ11.json'));
-    expect(await v_database.item.view('users', "yeaJ11")).toEqual(compar);
+    var compar = JSON.parse(v_fs.readSy(vDB.config.data_dir + '/users/yeaJ11.json'));
+    expect(await vDB.item.view('users', "yeaJ11")).toEqual(compar);
 });
 
 
 test('User view with id 009', async () => {
-    var compar = JSON.parse(v_fs.readSy(process.v.data_dir + '/users/yeaJ11.json'));
-    expect(await v_database.item.view('users', { id: "yeaJ11" })).toEqual(compar);
+    var compar = JSON.parse(v_fs.readSy(vDB.config.data_dir + '/users/yeaJ11.json'));
+    expect(await vDB.item.view('users', { id: "yeaJ11" })).toEqual(compar);
 });
 
 test('User register test 010', async () => {
@@ -69,24 +69,24 @@ test('User register test 010', async () => {
 
 
 test('User register test 011', async () => {
-    process.v.log_to_console = true;
+    vDB.config.log_to_console = true;
     expect(await register({ username: 'ye11', email: '@gmail.com', password: '1234567890', password_confirm: '1234567890' })).toEqual([[{ "confirm": undefined, "input_value": "@gmail.com", "msg": "📑 Email verification failed.", "suggest": "Try removing special characters.", "type": "error" }]]);
 });
 
 test('User register test 012', async () => {
-    process.v.log_to_console = 'OPTIMIZED';
+    vDB.config.log_to_console = 'OPTIMIZED';
     expect(await register({ username: '11', email: 'yeA11@gmail.com', password: '1234567890', password_confirm: '1234567890' })).toEqual([[{ "confirm": undefined, "input_value": "11", "msg": "🤯 Username is too short.", "suggest": "Minimum Length is [4]", "type": "error" }, { "confirm": undefined, "input_value": "11", "msg": "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", "suggest": "Try removing special characters.", "type": "error" }]]);
 });
 
 test('User REMOVE test 013', async () => {
-    expect(await v_database.item.del('users')).toEqual(false);
+    expect(await vDB.item.del('users')).toEqual(false);
 });
 
 test('User REMOVE test 014', async () => {
-    expect(await v_database.item.del('users', 'yeaJ11')).toEqual(true);
+    expect(await vDB.item.del('users', 'yeaJ11')).toEqual(true);
 });
 
 test('User REMOVE test 015', async () => {
-    expect(await v_database.item.del('users', { id: 'yea_mki11' })).toEqual(true);
-    v_fs.removeDirSy(process.v.data_dir, { recursive: true });
+    expect(await vDB.item.del('users', { id: 'yea_mki11' })).toEqual(true);
+    v_fs.removeDirSy(vDB.config.data_dir, { recursive: true });
 });
