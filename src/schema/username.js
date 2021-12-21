@@ -12,7 +12,7 @@ const username_schema ={
       format: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.",
     }
   },
-  validate: async (username) => {
+  verify: async (username) => {
     return await v_rify(username_schema, username);
   }
 };
