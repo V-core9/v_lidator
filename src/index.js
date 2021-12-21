@@ -1,15 +1,10 @@
 
 
-const  email= require('./schema/email');
-const  password= require('./schema/password');
-const  username= require('./schema/username');
+const schema = require('./schema');
 
-const  name= require('./schema/name');
-
-  
 module.exports = {
-  email: email.verify,
-  password: password.verify,
-  username: username.verify,
-  name: name.verify,
+  email: schema.email.verify,
+  password: schema.password.verify,
+  username: schema.username.verify,
+  name: schema.name.verify,
 };
