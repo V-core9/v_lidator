@@ -14,7 +14,7 @@ const pass_schema = {
       confirm: "🚨 Confirmation Password Entry Does Not Match Password Provided."
     }
   },
-  validate: async (password, password_confirm) => {
+  verify: async (password, password_confirm) => {
     pass_schema.confirm = password_confirm;
     return await v_rify(pass_schema, password);
   },
