@@ -1,4 +1,4 @@
-const v_rify = require('../v_rify');
+const v_rify = require('../helpers/v_rify');
 
 const username_schema ={
   min: 4,

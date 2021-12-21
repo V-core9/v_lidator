@@ -1,11 +1,11 @@
-const user_schema = require('../src/user/schema.js');
+const email = require('../src/schema/email.js');
 
 const $_email = (string) => {
     return [
         {
             "confirm": undefined,
             "input_value": string,
-            "msg": user_schema.email.msg.error.format,
+            "msg": email.msg.error.format,
             "suggest": "Try removing special characters.",
             "type": "error"
         }

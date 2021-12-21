@@ -1,3 +1,5 @@
 module.exports = {
-  user: require('./user')
+  email: require('./schema/email'),
+  password: require('./schema/password'),
+  username: require('./schema/username'),
 };
