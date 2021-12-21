@@ -1,4 +1,4 @@
-const user_schema = require('../src/user/schema.js');
+const user_schema = require('../src/_sample/user/schema.js');
 
 const $_email = (string) => {
     return [

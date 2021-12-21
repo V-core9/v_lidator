@@ -1,6 +1,6 @@
-const {email} = require('../src/');
+const v_rifier = require('../src/');
 
-const mail = new email();
+const mail = new v_rifier.email();
 
 test('email is UNDEFINED', () => {
   expect(mail.get()).toBe(undefined);
