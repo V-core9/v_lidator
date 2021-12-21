@@ -1,6 +1,6 @@
-const v_lidator = require('../');
+const v_rifier = require('../');
 
-const l_name = new v_lidator.name();
+const l_name = new v_rifier.name();
 
 
 test('l_name is UNDEFINED', () => {

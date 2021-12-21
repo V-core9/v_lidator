@@ -1,6 +1,6 @@
-const v_lidator = require('../src');
+const v_rifier = require('../src');
 
-const title = new v_lidator.title();
+const title = new v_rifier.title();
 
 test('title is UNDEFINED', () => {
   expect(title.get()).toBe(undefined);
