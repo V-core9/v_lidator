@@ -11,6 +11,7 @@ class base {
     };
 
     this.options = require(`../definitions/${this.type()}`);
+    
     this.valid = (value) => {
       return (this.options.format.test(value) && ((typeof this.options.length === "undefined") ? true : ((this.options.length.min <= value.toString().length) && (value.toString().length <= this.options.length.max))));
     };

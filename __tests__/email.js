@@ -35,7 +35,7 @@ test('email.set to [@gmail.com]', () => {
 });
 
 test('email.set to [1@live.co]', () => {
-  expect(email.set("1@live.co")).toBe(true);
+  expect(email.set("1@live.co")).toBe(false);
 });
 
 test('email type', () => {

@@ -11,7 +11,9 @@
     "package-lock.json": true,
     "LICENSE": true,
     ".gitignore": true,
-    ".editorconfig": true
+    ".editorconfig": true,
+    ".jshintrc": true,
+    "coverage": true
   },
   "explorerExclude.backup": null
 }
