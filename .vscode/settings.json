@@ -12,7 +12,9 @@
     "LICENSE": true,
     ".gitignore": true,
     ".editorconfig": true,
-    "coverage": true
+    "coverage": true,
+    ".jshintrc": true,
+    "jest.config.js": true
   },
   "explorerExclude.backup": null
 }
