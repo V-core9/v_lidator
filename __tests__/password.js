@@ -10,7 +10,7 @@ static_data.forEach(item => {
 
 // Dynamic Part
 var faker = require('faker');
-const test_count = 1000000;
+const test_count = 500000;
 
 var fItems = [];
 for (var i = 0; i < test_count; i++) {
