@@ -1,4 +1,4 @@
-const v_rify = require('../helpers/v_rify');
+const v_rify = require('../core/v_rify');
 
 const pass_schema = {
   confirm : null,

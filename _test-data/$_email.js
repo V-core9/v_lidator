@@ -12,4 +12,4 @@ const $_email = (string) => {
     ];
 };
 
-exports.$_email = $_email;
+module.exports = $_email;

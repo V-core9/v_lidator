@@ -1,4 +1,4 @@
-const { $_password } = require("./$_password");
+const $_password = require("./$_password");
 
 
 module.exports = [

@@ -1,11 +1,8 @@
 const v_rifier = require('..');
-const data = require("../_test-data/name.list");
+const static_data = require("../_test-data/name.list");
 
-data.forEach(item => {
+static_data.forEach(item => {
   test('NAME  ?? [ ' + item.input + ' ]', async () => {
     expect(await v_rifier.name(item.input)).toEqual(item.expect);
   });
 });
-
-
-
