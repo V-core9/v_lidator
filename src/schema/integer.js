@@ -9,11 +9,11 @@ const integer_schema ={
     error: {
       min: "🤯 Integer is too short.",
       max: "💥 Integer exceeded allowed maximum.",
-      format: "🙋‍♂️ Integer can only have numbers and dot.",
+      format: "🙋‍♂️ Integer can only have numbers.",
     }
   },
   verify: async (integer) => {
-    return (integer - Math.trunc(integer) === 0) ? await v_rify(integer_schema, integer) : false;
+    return await v_rify(integer_schema, integer);
   }
 };
 
