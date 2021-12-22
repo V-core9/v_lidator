@@ -4,7 +4,7 @@
 module.exports = [
   {
     input: ".",
-    expect: [{ confirm: undefined, input_value: ".", msg: "🤯 Username is too short.", suggest: "Minimum Length is [4]", type: "error" }, { confirm: undefined, input_value: ".", msg: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", suggest: "Try removing special characters.", type: "error" }],
+    expect: [{ confirm: undefined, input_value: ".", msg: "🤯 Username is too short.", suggest: "Minimum Length is [3]", type: "error" }, { confirm: undefined, input_value: ".", msg: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", suggest: "Try removing special characters.", type: "error" }],
   },
   {
     input:"Demo",
@@ -16,19 +16,19 @@ module.exports = [
   },
   {
     input:"z.",
-    expect: [{ confirm: undefined, input_value: "z.", msg: "🤯 Username is too short.", suggest: "Minimum Length is [4]", type: "error" }]
+    expect: [{ confirm: undefined, input_value: "z.", msg: "🤯 Username is too short.", suggest: "Minimum Length is [3]", type: "error" }]
   },
   {
     input:"..",
-    expect: [{ confirm: undefined, input_value: "..", msg: "🤯 Username is too short.", suggest: "Minimum Length is [4]", type: "error" }, { confirm: undefined, input_value: "..", msg: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", suggest: "Try removing special characters.", type: "error" }]
+    expect: [{ confirm: undefined, input_value: "..", msg: "🤯 Username is too short.", suggest: "Minimum Length is [3]", type: "error" }, { confirm: undefined, input_value: "..", msg: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", suggest: "Try removing special characters.", type: "error" }]
   },
   {
     input:".._",
-    expect: [{ confirm: undefined, input_value: ".._", msg: "🤯 Username is too short.", suggest: "Minimum Length is [4]", type: "error" }, { confirm: undefined, input_value: ".._", msg: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", suggest: "Try removing special characters.", type: "error" }]
+    expect: [{ confirm: undefined, input_value: ".._", msg: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", suggest: "Try removing special characters.", type: "error" }]
   },
   {
     input:"De_",
-    expect: [{confirm: undefined, input_value: "De_", msg: "🤯 Username is too short.", suggest: "Minimum Length is [4]", type: "error"}]
+    expect:true
   },
   {
     input:"De/.mo",
@@ -103,13 +103,13 @@ module.exports = [
   },
   
   {
-    input:"De_",
-    expect: [{ "confirm": undefined, "input_value": "De_", "msg": "🤯 Username is too short.", "suggest": "Minimum Length is [4]", "type": "error" }]
+    input:"Vs_",
+    expect: true
   },
   
   {
     input:"A",
-    expect: [{ "confirm": undefined, "input_value": "A", "msg": "🤯 Username is too short.", "suggest": "Minimum Length is [4]", "type": "error" }]
+    expect: [{ "confirm": undefined, "input_value": "A", "msg": "🤯 Username is too short.", "suggest": "Minimum Length is [3]", "type": "error" }]
   },
   
 ];

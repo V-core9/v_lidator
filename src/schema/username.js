@@ -1,7 +1,7 @@
 const v_rify = require('../core/v_rify');
 
 const username_schema ={
-  min: 4,
+  min: 3,
   max: 32,
   format: /^[A-Za-z][A-Za-z0-9_.]{0,255}$/,
   msg: {

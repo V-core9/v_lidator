@@ -8,6 +8,10 @@ module.exports = [
     expect: $_email
   },
   {
+    input: 'Wiley_Denesik@hotmail.com',
+    expect: true
+  },
+  {
     input: '..',
     expect: $_email
   },
@@ -45,7 +49,7 @@ module.exports = [
   },
   {
     input: 'Demo_____1@mail.com',
-    expect: $_email
+    expect: true
   },
   {
     input: 'Demo123455367345531231264362352341234123123123123',
