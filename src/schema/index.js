@@ -5,4 +5,7 @@ module.exports = {
   password: require('./password'),
   username: require('./username'),
   name: require('./name'),
+  text: require('./text'),
+  number: require('./number'),
+  integer: require('./integer'),
 };
