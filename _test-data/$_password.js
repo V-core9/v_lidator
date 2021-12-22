@@ -50,4 +50,4 @@ const $_password = {
     
 };
 
-exports.$_password = $_password;
+module.exports = $_password;

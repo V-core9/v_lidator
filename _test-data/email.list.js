@@ -1,5 +1,5 @@
 
-const { $_email } = require("./$_email");
+const $_email = require("./$_email");
 
 
 module.exports = [
