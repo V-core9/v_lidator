@@ -1,6 +1,6 @@
 {
   "name": "v_rifier",
-  "version": "0.0.2",
+  "version": "0.0.5",
   "description": "Data Validator => v_rifier 😁",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,14 @@
     "type": "git",
     "url": "git+https://github.com/V-core9/v_rifier.git"
   },
-  "keywords": [],
+  "keywords": [
+    "validator",
+    "verifier",
+    "data validation",
+    "data verification",
+    "v-core9",
+    "v_rifier"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
