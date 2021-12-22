@@ -6,3 +6,19 @@ static_data.forEach(item => {
     expect(await v_rifier.name(item.input)).toEqual(item.expect);
   });
 });
+
+
+// Dynamic Part
+var faker = require('faker');
+const test_count = 1000000;
+
+var fItems = [];
+for (var i = 0; i < test_count; i++) {
+  fItems.push(faker.name.firstName());
+}
+
+fItems.forEach(item => {
+  test('Faker Name : ' + item, async () => {
+    expect(await v_rifier.name(item)).toEqual(true);
+  });
+});

@@ -1,7 +1,7 @@
 const v_rify = require('../core/v_rify');
 
 const email_schema = {
-  format: /^[A-Za-z0-9][A-Za-z0-9.]+@[^\s@]+\.[^\s@]+$/,
+  format: /^[A-Za-z0-9][A-Za-z0-9._]+@[^\s@]+\.[^\s@]+$/,
   msg: {
     success: "✅ Success\n📫 Email Verified Successfully.",
     error: {

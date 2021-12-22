@@ -1,9 +1,9 @@
 const v_rify = require('../core/v_rify');
 
 const name_schema ={
-  min: 4,
+  min: 2,
   max: 32,
-  format: /^[A-Za-z][A-Za-z0-9 ]{0,255}$/,
+  format: /^[A-Za-z][A-Za-z0-9 ']{0,255}$/,
   msg: {
     success: "✅ Success\n🤪 Name Verified Successfully.",
     error: {
