@@ -140,5 +140,30 @@ module.exports = [
     expect: $_email
   },
   
+  {
+    input: 'slavko@.gmail.com',
+    expect: $_email
+  },
+  {
+    input: 'slavko_@_gmail.com',
+    expect: $_email
+  },
+  {
+    input: 'slavko_@^gmail.com',
+    expect: $_email
+  },
+  {
+    input: 'slavko_@&%com',
+    expect: $_email
+  },
+  {
+    input: 'slavko_@111.com',
+    expect: true
+  },
+  {
+    input: 'slavko@v-core9.com',
+    expect: true
+  },
+  
 ];
 

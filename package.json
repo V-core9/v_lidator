@@ -1,6 +1,6 @@
 {
   "name": "v_rifier",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Data Validator => v_rifier 😁",
   "main": "index.js",
   "scripts": {
@@ -17,10 +17,16 @@
     "data validation",
     "data verification",
     "v-core9",
-    "v_rifier"
+    "v_rifier",
+    "email",
+    "username",
+    "password",
+    "number",
+    "text",
+    "integer"
   ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/V-core9/v_rifier/issues"
   },
