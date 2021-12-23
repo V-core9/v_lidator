@@ -127,6 +127,14 @@ module.exports = [
     input: 'Demo',
     expect: $_email
   },
+  {
+    input: 'slavko_.@gmail.com',
+    expect: $_email
+  },
+  {
+    input: 'slavko.@gmail.com',
+    expect: $_email
+  },
   
 ];
 
