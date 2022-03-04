@@ -3,6 +3,11 @@ const $_password = require("./$_password");
 
 module.exports = [
   {
+    input: undefined,
+    confirm: "",
+    expect: $_password.missingInputErr,
+  },
+  {
     input: '.',
     confirm: ",",
     expect: $_password.minConfirmErr,

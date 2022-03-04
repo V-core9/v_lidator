@@ -12,8 +12,9 @@ const username_schema ={
       format: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.",
     }
   },
-  verify: async (username) => {
-    return await v_rify(username_schema, username);
+  verify: async (value) => {
+    if (value === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
+    return await v_rify(username_schema, value);
   }
 };
 

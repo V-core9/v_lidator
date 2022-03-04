@@ -12,8 +12,9 @@ const text_schema ={
       format: "🙋‍♂️ Text can only have letters, numbers, underscore and dot.",
     }
   },
-  verify: async (Text) => {
-    return await v_rify(text_schema, Text);
+  verify: async (value) => {
+    if (value === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
+    return await v_rify(text_schema, value);
   }
 };
 

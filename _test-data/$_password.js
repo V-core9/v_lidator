@@ -47,6 +47,17 @@ const $_password = {
     //     var confErr = $_password.confirmErr(string, confirm);
     //     return [maxErr[0], confErr[0]];
     // }
+
+    missingInputErr(string, confirm = undefined) {
+      return [
+        {
+          "confirm": undefined,
+          "input_value": undefined,
+          "msg": "Missing input.",
+          "type": "error"
+        }
+      ];
+    } 
     
 };
 

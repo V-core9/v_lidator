@@ -1,8 +1,12 @@
 
-const $_email = require("./$_email");
+const {$_email, $_emailEmpty} = require("./$_email");
 
 
 module.exports = [
+  {
+    input: undefined,
+    expect: $_emailEmpty
+  },
   {
     input: '.',
     expect: $_email

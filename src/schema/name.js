@@ -13,6 +13,7 @@ const name_schema ={
     }
   },
   verify: async (name) => {
+    if (name === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
     return await v_rify(name_schema, name);
   }
 };

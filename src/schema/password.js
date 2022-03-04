@@ -15,6 +15,7 @@ const pass_schema = {
     }
   },
   verify: async (password, password_confirm) => {
+    if (password === undefined || password_confirm === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
     pass_schema.confirm = password_confirm;
     return await v_rify(pass_schema, password);
   },

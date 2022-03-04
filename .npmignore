@@ -1,0 +1,6 @@
+__tests__
+_SAMPLE
+_test-data
+.vscode
+node_modules
+package-lock.json

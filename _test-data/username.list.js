@@ -3,6 +3,17 @@
 
 module.exports = [
   {
+    input: undefined,
+    expect: [
+      {
+        "confirm": undefined,
+        "input_value": undefined,
+        "msg": "Missing input.",
+        "type": "error"
+      }
+    ]
+  },
+  {
     input: ".",
     expect: [{ confirm: undefined, input_value: ".", msg: "🤯 Username is too short.", suggest: "Minimum Length is [3]", type: "error" }, { confirm: undefined, input_value: ".", msg: "🙋‍♂️ Username can only have letters, numbers, underscore and dot.", suggest: "Try removing special characters.", type: "error" }],
   },

@@ -13,6 +13,7 @@ const integer_schema ={
     }
   },
   verify: async (integer) => {
+    if (integer === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
     return await v_rify(integer_schema, integer);
   }
 };
