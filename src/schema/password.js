@@ -1,4 +1,5 @@
 const v_rify = require('../core/v_rify');
+const { isEmpty } = require('v_is_empty_value');
 
 const pass_schema = {
   confirm : null,
@@ -15,7 +16,8 @@ const pass_schema = {
     }
   },
   verify: async (password, password_confirm) => {
-    if (password === undefined || password_confirm === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
+    if (await isEmpty(password) || await isEmpty(password_confirm)) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
+
     pass_schema.confirm = password_confirm;
     return await v_rify(pass_schema, password);
   },

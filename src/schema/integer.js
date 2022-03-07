@@ -1,4 +1,5 @@
 const v_rify = require('../core/v_rify');
+const { notEmpty } = require('v_is_empty_value');
 
 const integer_schema ={
   min: 0,
@@ -12,9 +13,8 @@ const integer_schema ={
       format: "🙋‍♂️ Integer can only have numbers.",
     }
   },
-  verify: async (integer) => {
-    if (integer === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
-    return await v_rify(integer_schema, integer);
+  verify: async (value) => {
+    return (await notEmpty(value)) ? await v_rify(integer_schema, value) : [{"msg": "Missing input.", "type": "error" }];
   }
 };
 

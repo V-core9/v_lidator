@@ -1,4 +1,5 @@
 const v_rify = require('../core/v_rify');
+const { notEmpty } = require('v_is_empty_value');
 
 const number_schema ={
   min: 0,
@@ -12,9 +13,8 @@ const number_schema ={
       format: "🙋‍♂️ Number can only have numbers and dot.",
     }
   },
-  verify: async (number) => {
-    if (number === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
-    return await v_rify(number_schema, number);
+  verify: async (value) => {
+    return (await notEmpty(value)) ? await v_rify(number_schema, value) : [{"msg": "Missing input.", "type": "error" }];
   }
 };
 

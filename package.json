@@ -1,6 +1,6 @@
 {
   "name": "v_rifier",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Data Validator => v_rifier 😁",
   "main": "index.js",
   "scripts": {
@@ -35,5 +35,8 @@
     "faker": "^5.5.3",
     "jest": "^27.3.1",
     "v_database": "^0.1.5"
+  },
+  "dependencies": {
+    "v_is_empty_value": "^1.0.7"
   }
 }

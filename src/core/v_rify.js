@@ -1,4 +1,3 @@
-//<[ 🩺 - cfg Validator ]>- - - - - - ->
 const v_rify = async (cfg, data) => {
   var errorList = [];
   const len = String(data).length;
@@ -8,6 +7,5 @@ const v_rify = async (cfg, data) => {
   if (typeof cfg.msg.error.confirm !== 'undefined') if (data !== cfg.confirm) errorList.push({ type: 'error', input_value: data, msg: cfg.msg.error.confirm, suggest: 'Make them same.', confirm: cfg.confirm });
   return (errorList.length > 0) ? errorList : true;
 };
-//<- - - - - - - - - - - - - - - - - - ->
 
 module.exports = v_rify;

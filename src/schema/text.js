@@ -1,4 +1,5 @@
 const v_rify = require('../core/v_rify');
+const { notEmpty } = require('v_is_empty_value');
 
 const text_schema ={
   min: 0,
@@ -13,8 +14,7 @@ const text_schema ={
     }
   },
   verify: async (value) => {
-    if (value === undefined) return [{ "confirm": undefined, "input_value": undefined, "msg": "Missing input.", "type": "error" }];
-    return await v_rify(text_schema, value);
+    return (await notEmpty(value)) ? await v_rify(text_schema, value) : [{"msg": "Missing input.", "type": "error" }];
   }
 };
 
