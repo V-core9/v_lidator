@@ -1,6 +1,6 @@
 {
   "name": "v_rifier",
-  "version": "0.0.10",
+  "version": "0.1.1",
   "description": "Data Validator => v_rifier 😁",
   "main": "index.js",
   "scripts": {
@@ -33,8 +33,7 @@
   "homepage": "https://github.com/V-core9/v_rifier#readme",
   "devDependencies": {
     "faker": "^5.5.3",
-    "jest": "^27.3.1",
-    "v_database": "^0.1.5"
+    "jest": "^27.3.1"
   },
   "dependencies": {
     "v_is_empty_value": "^1.0.7"
