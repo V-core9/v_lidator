@@ -1,7 +1,7 @@
 {
   "name": "v_rifier",
-  "version": "0.1.1",
-  "description": "Data Validator => v_rifier 😁",
+  "version": "0.1.2",
+  "description": "Simple to use and quite flexible Data Validator/Verifier for Web and Node.js applications.",
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -23,9 +23,19 @@
     "password",
     "number",
     "text",
-    "integer"
+    "integer",
+    "boolean",
+    "array",
+    "object",
+    "port",
+    "hexadecimal",
+    "color"
   ],
-  "author": "",
+  "author": {
+    "name": "V-core9",
+    "email": "slavko.vuletic92@gmail.com",
+    "url": "https://v-core9.com/"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/V-core9/v_rifier/issues"

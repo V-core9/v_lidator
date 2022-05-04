@@ -12,3 +12,9 @@ jest.config.js
 LICENSE
 node_modules/
 package-lock.json
+
+
+./src/core_types/.*.js
+
+.*.js
+./**/.*.js

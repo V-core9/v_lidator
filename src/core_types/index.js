@@ -33,28 +33,6 @@ const coreTypes = {
 
   color: require('./color'),
 
-  /*
-  npmName: require('./npmName'),
-  float: require('./float'),
-  json: require('./json'),
-  uuid: require('./uuid'),
-  zipCode: require('./zipCode'),
-  latitude: require('./latitude'),
-  longitude: require('./longitude'),
-  country: require('./country'),
-  countryCode: require('./countryCode'),
-  domainName: require('./domainName'),
-  url: require('./url'),
-  ip: require('./ip'),
-  ipv6: require('./ipv6'),
-  macAddress: require('./macAddress'),
-  slug: require('./slug'),
-  dateTime: require('./dateTime'),
-  creditCardNumber: require('./creditCardNumber'),
-  creditCardCVV: require('./creditCardCVV'),
-  iban: require('./iban'),
-  */
-
 };
 
 module.exports = coreTypes;
