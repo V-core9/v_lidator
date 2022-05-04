@@ -1,4 +1,4 @@
-const isString = require('./is_string');
+const isString = require('./string');
 
 module.exports = isName = async (value) => {
   if (await isString(value)) {

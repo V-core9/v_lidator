@@ -3,7 +3,7 @@ const static_data = require("../data/password.list");
 
 static_data.forEach(item => {
   test('PASSWORD  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier.isPassword(item.input, item.confirm)).toEqual((item.expect === true) ? true : false);
+    expect(await v_rifier.isPassword(item.input, item.confirm)).toEqual((item.expect) ? true : false);
   });
 });
 

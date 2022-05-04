@@ -1,30 +1,58 @@
 const coreTypes = {
+  array: require('./array'),
 
-  integer: require('./is_integer'),
+  bool: require('./bool'),
 
-  number: require('./is_number'),
+  email: require('./email'),
 
-  string: require('./is_string'),
+  function: require('./function'),
 
-  bool: require('./is_bool'),
+  integer: require('./integer'),
 
-  array: require('./is_array'),
+  name: require('./name'),
 
-  object: require('./is_object'),
+  null: require('./null'),
 
-  null: require('./is_null'),
+  number: require('./number'),
 
-  undefined: require('./is_undefined'),
+  object: require('./object'),
 
-  function: require('./is_function'),
+  password: require('./password'),
 
-  email: require('./is_email'),
+  string: require('./string'),
 
-  name: require('./is_name'),
+  undefined: require('./undefined'),
 
-  username: require('./is_username'),
+  username: require('./username'),
 
-  password: require('./is_password'),
+  port: require('./port'),
+
+  npmVersion: require('./npmVersion'),
+
+  hexadecimal: require('./hexadecimal'),
+
+  /*
+  npmName: require('./npmName'),
+  float: require('./float'),
+  json: require('./json'),
+  uuid: require('./uuid'),
+  zipCode: require('./zipCode'),
+  latitude: require('./latitude'),
+  longitude: require('./longitude'),
+  country: require('./country'),
+  countryCode: require('./countryCode'),
+  domainName: require('./domainName'),
+  url: require('./url'),
+  ip: require('./ip'),
+  ipv6: require('./ipv6'),
+  macAddress: require('./macAddress'),
+  color: require('./color'),
+  slug: require('./slug'),
+  dateTime: require('./dateTime'),
+  creditCardNumber: require('./creditCardNumber'),
+  creditCardCVV: require('./creditCardCVV'),
+  iban: require('./iban'),
+  */
 
 };
 
