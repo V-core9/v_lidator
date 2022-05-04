@@ -5,14 +5,19 @@
 .npmignore
 .vscode
 __tests__
+__tests__/
+
+./__tests__/*
+
 coverage
+coverage/
+./coverage/*
 coverage.png
 
 jest.config.js
 LICENSE
 node_modules/
 package-lock.json
-
 
 ./src/core_types/.*.js
 
