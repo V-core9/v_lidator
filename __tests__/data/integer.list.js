@@ -78,5 +78,13 @@ module.exports = [
     input: 99999999999,
     expect: false
   },
+  {
+    input: true,
+    expect: false
+  },
+  {
+    input: false,
+    expect: false
+  },
 
 ];

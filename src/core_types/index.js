@@ -31,6 +31,8 @@ const coreTypes = {
 
   hexadecimal: require('./hexadecimal'),
 
+  color: require('./color'),
+
   /*
   npmName: require('./npmName'),
   float: require('./float'),
@@ -46,7 +48,6 @@ const coreTypes = {
   ip: require('./ip'),
   ipv6: require('./ipv6'),
   macAddress: require('./macAddress'),
-  color: require('./color'),
   slug: require('./slug'),
   dateTime: require('./dateTime'),
   creditCardNumber: require('./creditCardNumber'),

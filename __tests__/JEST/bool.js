@@ -51,3 +51,10 @@ static_data.forEach(item => {
     expect(await v_rifier.isBool(item.input)).toEqual(item.expect);
   });
 });
+
+
+static_data.forEach(item => {
+  test('"bool"  ?? [ ' + item.input + ' ]\n', async () => {
+    expect(await v_rifier("bool", item.input)).toEqual(item.expect);
+  });
+});

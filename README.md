@@ -2,6 +2,10 @@
 
 Data V[a]rifier => v_rifier 😁
 
+## 🔻 Beta STATE 001...0 xD
+
+## 📚 How to use
+
     const v_rifier = require('v_rifier');
     v_rifier.loadBuiltIns();
 
@@ -26,13 +30,31 @@ Boolean Checker
         v_rifier.isBool("true") //> false
         v_rifier('bool', "true") //> false
 
-3. **email**  
+3. **color**  
+Color Checker that will verify if provided string is valid color in RGB, RGBA and hex format.
+
+        // RGB
+        v_rifier.isColor("25,25,25") //> true
+        // RGBA
+        v_rifier.isColor("25,25,25,.58") //> true
+        
+        // Hex
+        v_rifier.isColor("#CBA") //> true
+        v_rifier.isColor("#CBA5") //> true
+        v_rifier.isColor("#FF00CC") //> true
+        v_rifier.isColor("#FF00CC50") //> true
+        
+        // Invalid
+        v_rifier.isColor("0,0,0,-.58") //> true
+        v_rifier.isColor("FF00CC50") //> false
+
+4. **email**  
 Email Checker
 
         v_rifier.isEmail('slavko.vuletic92@gmail.com') //> true
         v_rifier('email','slavko.vuletic92@gmail.com') //> true
 
-4. **function**  
+5. **function**  
 Function Checker
 
         const sampleFunc = async () => {
@@ -42,67 +64,96 @@ Function Checker
         v_rifier.isFunction(sampleFunc) //> true
         v_rifier('function', sampleFunc ) //> true
 
-5. **integer**  
+6. **hexadecimal**  
+Hexadecimal Checker - returns true if provided string is a hexadecimal number.
+
+        v_rifier.isHexadecimal( 'FAc0516' ) //> true
+        v_rifier('hexadecimal', 1561313 ) //> false
+
+7. **integer**  
 Integer Checker
 
         v_rifier.isInteger( 123 ) //> true
-        v_rifier('integer', 123 ) //> true
+        v_rifier('integer', 984351 ) //> true
 
-6. **name**  
+8. **name**  
 Name Checker
 
-        v_rifier.isName( 123 ) //> true
-        v_rifier('name', 123 ) //> true
+        v_rifier.isName( "Slavko Vuletic" ) //> true
+        v_rifier('name', 123 ) //> false
 
-7. **null**  
+9. **npmVersion**  
+npmVersion Checker
+
+        v_rifier.isNull( "1.2.1" ) //> true
+        v_rifier('null', "55.798.15" ) //> true
+
+        v_rifier.isNull( 123 ) //> false
+        v_rifier('null', "55.-798.15" ) //> false
+        v_rifier('null', "55.-798.15-" ) //> false
+
+10. **null**  
 Null Checker
 
-        v_rifier.isNull( 123 ) //> true
-        v_rifier('null', 123 ) //> true
+        v_rifier.isNull( null ) //> true
+        v_rifier('null', null ) //> true
 
-8. **number**  
+11. **number**  
 Number Checker
 
         v_rifier.isNumber( 123 ) //> true
         v_rifier('number', 123 ) //> true
 
-9. **object**  
+12. **object**  
 object Checker
 
-        v_rifier.isObject( 123 ) //> true
-        v_rifier('object', 123 ) //> true
+        v_rifier.isObject( { name: "yea" } ) //> true
+        v_rifier('object', 123 ) //> false
 
-10. **password**  
-password Checker
+13. **password**  
+password Checker - Verify password with confirmation password and returns true if password is valid [length & characters].
 
-        v_rifier.isPassword( 123 ) //> true
-        v_rifier('password', 123 ) //> true
+        v_rifier.isPassword( 'MyPassword123', 'MyPassword123' ) //> true
+        v_rifier('password', 'MyPassword123', 'MyPassword123' ) //> true
 
-11. **string**  
+        v_rifier.isPassword( 'MyPassword123', 123 ) //> false
+        v_rifier('password', 'MyPassword123' ) //> false
+
+14. **port**  
+PORT Checker
+
+        v_rifier.isPort( 8000 ) //> true
+        v_rifier('port', 8000 ) //> true
+
+        v_rifier.isPort( -8000 ) //> false
+        v_rifier('port', 8000000 ) //> false
+
+15. **string**  
 string Checker
 
-        v_rifier.isString( 123 ) //> true
-        v_rifier('string', 123 ) //> true
+        v_rifier.isString( "random String" ) //> true
+        v_rifier('string', "random String" ) //> true
 
-12. **undefined**  
+        v_rifier.isString( 123 ) //> false
+        v_rifier('string', 123 ) //> false
+
+16. **undefined**  
 undefined Checker
 
-        v_rifier.isUndefined( 123 ) //> true
-        v_rifier('undefined', 123 ) //> true
+        v_rifier.isUndefined(  ) //> true
+        v_rifier('undefined', undefined ) //> true
 
-13. **username**  
+        v_rifier.isUndefined( 11 ) //> false
+        v_rifier('undefined', "undefined" ) //> false
+
+17. **username**  
 username Checker
 
         v_rifier.isUsername( 123 ) //> true
         v_rifier('username', 123 ) //> true
 
-## **✅ Tests and Coverage with Jest**
 
-![Test and Coverage with Jest](coverage.png)
-
-## ALPHA STATE 000...0 xD
-
-## 📚 Advanced Usage
+## 🚀 Advanced Usage
 
 ### 1. Register Custom Type
 
@@ -175,3 +226,8 @@ Main usecase basically, where you would want to check on something like a value 
       console.log(await v_rifier.isCustomType("-123")); //> false
 
     })();
+
+
+## **✅ Tests and Coverage with Jest**
+
+![Test and Coverage with Jest](coverage.png)

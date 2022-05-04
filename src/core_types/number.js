@@ -1,1 +1,1 @@
-module.exports = isNumber = async (value) => (!isNaN(value));
+module.exports = isNumber = async (value) => (typeof value === 'number');

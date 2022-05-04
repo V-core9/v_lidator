@@ -70,7 +70,7 @@ const static_data = [
     input: "ABC",
     expect: false,
   },
-  
+
 
   {
     input: 72875,
@@ -105,7 +105,18 @@ const static_data = [
 ];
 
 static_data.forEach(item => {
-  test('isPort  ?? [ ' + item.input + ' ]\n', async () => {
+  test('Specific .isPort  ?? [ ' + item.input + ' ]\n', async () => {
     expect(await v_rifier.isPort(item.input)).toEqual(item.expect);
   });
+});
+
+
+test('confirming all ports', async () => {
+  for (let i = -10000; i < 100000; i++) {
+    if (0 < i && i < 65536) {
+      expect(await v_rifier.isPort(i)).toEqual(true);
+    } else {
+      expect(await v_rifier.isPort(i)).toEqual(false);
+    }
+  }
 });

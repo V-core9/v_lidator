@@ -35,4 +35,12 @@ module.exports = [
     input: 123456789012345678901234567890.12345678901234567890,
     expect: true
   },
+  {
+    input: true,
+    expect: false
+  },
+  {
+    input: false,
+    expect: false
+  },
 ];
