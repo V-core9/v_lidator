@@ -209,6 +209,8 @@ After loading module, you can create your custom validation type without even lo
 
     })();
 
+> Example Location: Example is located in **/__tests__/_README.advanced.js**
+
 ### 5. Or a combination of built-ins and custom types
 
 Main usecase basically, where you would want to check on something like a value being a number and also greather than some other value...while not caring about it being empty/undefined/anything else.
@@ -228,6 +230,8 @@ Main usecase basically, where you would want to check on something like a value 
       console.log(await demoVerifier.isCustomType("-123")); //> false
 
     })();
+
+> Example Location: Example is located in **/__tests__/_README.advanced-combined.js**
 
 
 ## **✅ Tests and Coverage with Jest**
