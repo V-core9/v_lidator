@@ -1,4 +1,11 @@
-const v_rifier = require('../data/v_rifier');
+const v_rifier = require('../..');
+
+let myVerifier = null;
+
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 
 const undefinedVariable = undefined;
 
@@ -76,13 +83,13 @@ const static_data = [
 
 static_data.forEach(item => {
   test('isHexadecimal  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier.isHexadecimal(item.input)).toEqual(item.expect);
+    expect(await myVerifier.isHexadecimal(item.input)).toEqual(item.expect);
   });
 });
 
 
 static_data.forEach(item => {
   test('"hexadecimal"  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier("hexadecimal", item.input)).toEqual(item.expect);
+    expect(await myVerifier("hexadecimal", item.input)).toEqual(item.expect);
   });
 });

@@ -1,59 +1,58 @@
-const typeNameHandle = async (val) => {
-  return 'is' + val.charAt(0).toUpperCase() + val.slice(1);
-};
+module.exports = async function v_rifier(options = {}) {
+  
+  const typeNameHandle = require('./helpers/typeNameHandle');
 
+  let builtIns = (typeof options.builtIns === 'boolean') ? options.builtIns : true;
 
-const v_rifier = async (typeName, ...args) => {
-  typeName = await typeNameHandle(typeName);
-  if (v_rifier[typeName] === undefined) return false;
-  return await v_rifier[typeName](...args);
-};
-
-
-v_rifier.unregister = async (typeName) => {
-  typeName = await typeNameHandle(typeName);
-  if (typeof typeName === 'string' && v_rifier[typeName] !== undefined) {
-    if (v_rifier[typeName].custom === true) {
-      delete v_rifier[typeName];
-      return true;
-    }
-  }
-  return false;
-};
-
-
-v_rifier.register = async (typeName, cb) => {
-  if (typeof cb === 'function' && typeof typeName === 'string') {
+  async function verify(typeName, ...args) {
     typeName = await typeNameHandle(typeName);
-    if (v_rifier[typeName] === undefined) {
-      v_rifier[typeName] = cb;
-      v_rifier[typeName].custom = true;
-      return true;
+    if (verify[typeName] === undefined) return false;
+    return verify[typeName](...args);
+  }
+
+  verify.register = async (typeName, cb) => {
+    if (typeof cb === 'function' && typeof typeName === 'string') {
+      typeName = await typeNameHandle(typeName);
+      if (verify[typeName] === undefined) {
+        verify[typeName] = cb;
+        verify[typeName].custom = true;
+        return true;
+      }
+      return false;
     }
     return false;
-  }
-  return false;
-};
+  };
+
+  verify.unregister = async (typeName) => {
+    typeName = await typeNameHandle(typeName);
+    if (typeof typeName === 'string' && verify[typeName] !== undefined) {
+      if (verify[typeName].custom === true) {
+        delete verify[typeName];
+        return true;
+      }
+    }
+    return false;
+  };
+
+  verify.listTypes = async () => {
+    var types = [];
+    for (var type in verify) {
+      if (verify[type].custom === true) {
+        let oldName = type.replace('is', '');
+        types.push(oldName.charAt(0).toLowerCase() + oldName.slice(1));
+      }
+    }
+    return types;
+  };
 
 
-v_rifier.listTypes = async () => {
-  var types = [];
-  for (var type in v_rifier) {
-    if (v_rifier[type].custom === true) {
-      let oldName = type.replace('is', '');
-      types.push(oldName.charAt(0).toLowerCase() + oldName.slice(1));
+  //? Maybe Load BuiltIns
+  if (builtIns) {
+    const coreTypes = require('./core_types');
+    for (let type in coreTypes) {
+      await verify.register(type, coreTypes[type]);
     }
   }
-  return types;
+  
+  return verify;
 };
-
-
-v_rifier.loadBuiltIns = async () => {
-  const coreTypes = require('./core_types');
-  for (var type in coreTypes) {
-    await v_rifier.register(type, coreTypes[type]);
-  }
-};
-
-
-module.exports = v_rifier;

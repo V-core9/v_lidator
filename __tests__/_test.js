@@ -4,62 +4,61 @@ const v_rifier = require('../src');
 
   console.log(v_rifier);
 
+  let myVerifier = await v_rifier();
 
-  await v_rifier.loadBuiltIns();
+  console.log(myVerifier.toString());
 
-  console.log(v_rifier.toString());
-
-  console.log('string', await v_rifier('string', 12312312312));
-  console.log('bool', await v_rifier('bool', 12312312312));
-
+  console.log('string', await myVerifier('string', 12312312312));
+  console.log('bool', await myVerifier('bool', 12312312312));
 
 
 
-  console.log(v_rifier);
+
+  console.log(myVerifier);
   // List Types After Registering Few New Ones
-  console.log(await v_rifier.listTypes());
+  console.log(await myVerifier.listTypes());
 
 
   //? Test Custom Types
 
   //? Names
   //! Bad
-  console.log('name', await v_rifier('name', 12312312312));
-  console.log('name', await v_rifier('name', "slavko.vulet ic92@gmail.com"));
-  console.log('name', await v_rifier('name', "Slavko VuleticSlavko VuleticSlavko Vuletic"));
+  console.log('name', await myVerifier('name', 12312312312));
+  console.log('name', await myVerifier('name', "slavko.vulet ic92@gmail.com"));
+  console.log('name', await myVerifier('name', "Slavko VuleticSlavko VuleticSlavko Vuletic"));
   //* Good 
-  console.log('name', await v_rifier('name', "Slavko Vuletic"));
-  console.log('name', await v_rifier('name', "Miki Yea Rrrr"));
+  console.log('name', await myVerifier('name', "Slavko Vuletic"));
+  console.log('name', await myVerifier('name', "Miki Yea Rrrr"));
 
 
   //? Emails
   //! Bad
-  console.log('email', await v_rifier('email', "Slavko VuleticSlavko VuleticSlavko Vuletic"));
-  console.log('email', await v_rifier('email', "slavko.vulet ic92@gmail.com"));
-  console.log('email', await v_rifier('email', "slavko.@vuletic92@gmail.com"));
+  console.log('email', await myVerifier('email', "Slavko VuleticSlavko VuleticSlavko Vuletic"));
+  console.log('email', await myVerifier('email', "slavko.vulet ic92@gmail.com"));
+  console.log('email', await myVerifier('email', "slavko.@vuletic92@gmail.com"));
   //* Good
-  console.log('email', await v_rifier('email', "slavko.vuletic92@gmail.com"));
-  console.log('email', await v_rifier('email', "slavko_vuletic@hotmail.com"));
+  console.log('email', await myVerifier('email', "slavko.vuletic92@gmail.com"));
+  console.log('email', await myVerifier('email', "slavko_vuletic@hotmail.com"));
 
 
   //? Passwords
   //! Bad
-  console.log('password[false]:', await v_rifier('password', "Slavko VuleticSlavko VuleticSlavko Vuletic"));
-  console.log('password[false]:', await v_rifier('password', "Slavko VuleticSlavko VuleticSlavko Vuletic", "Slavko VuleticSlavko VuleticSlavko Vuletic"));
-  console.log('password[false]:', await v_rifier('password', "Slavko_32123123", "123123123"));
+  console.log('password[false]:', await myVerifier('password', "Slavko VuleticSlavko VuleticSlavko Vuletic"));
+  console.log('password[false]:', await myVerifier('password', "Slavko VuleticSlavko VuleticSlavko Vuletic", "Slavko VuleticSlavko VuleticSlavko Vuletic"));
+  console.log('password[false]:', await myVerifier('password', "Slavko_32123123", "123123123"));
   //* Good
-  console.log('password[true]:', await v_rifier('password', "Slavko_32123123", "Slavko_32123123"));
-  console.log('password[true]:', await v_rifier('password', 123123, 123123));
+  console.log('password[true]:', await myVerifier('password', "Slavko_32123123", "Slavko_32123123"));
+  console.log('password[true]:', await myVerifier('password', 123123, 123123));
 
 
 
   //! Try to unregister ALL types 
   //! NOTE: Will only remove custom registered types.
-  (await v_rifier.listTypes()).forEach(async (type) => {
-    console.log('Un-register Type:', type, await v_rifier.unregister(type));
+  (await myVerifier.listTypes()).forEach(async (type) => {
+    console.log('Un-register Type:', type, await myVerifier.unregister(type));
   });
 
-  console.log(await v_rifier.listTypes());
+  console.log(await myVerifier.listTypes());
 
 
 })();

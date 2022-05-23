@@ -1,9 +1,14 @@
-const v_rifier  = require('../data/v_rifier');
+const v_rifier = require('../..');
+let myVerifier = null;
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 const static_data = require("../data/number.list");
 
 static_data.forEach(item => {
   test('NUMBER  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier.isNumber(item.input)).toEqual(item.expect);
+    expect(await myVerifier.isNumber(item.input)).toEqual(item.expect);
   });
 });
 
@@ -22,7 +27,7 @@ for (var i = 0; i < test_count; i++) {
 
 iItems.forEach(item => {
   test('Faker NUMBER: ' + item, async () => {
-    expect(await v_rifier.isNumber(item)).toEqual(true);
+    expect(await myVerifier.isNumber(item)).toEqual(true);
   });
 });
 

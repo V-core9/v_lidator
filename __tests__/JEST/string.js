@@ -1,4 +1,9 @@
-const v_rifier  = require('../data/v_rifier');
+const v_rifier = require('../..');
+let myVerifier = null;
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 const static_data = require("../data/name.list");
 
 
@@ -13,6 +18,6 @@ for (var i = 0; i < test_count; i++) {
 
 fItems.forEach(item => {
   test('Faker Text : ' + item, async () => {
-    expect(await v_rifier.isString(item)).toEqual(true);
+    expect(await myVerifier.isString(item)).toEqual(true);
   });
 });

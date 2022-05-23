@@ -1,4 +1,9 @@
-const v_rifier = require('../data/v_rifier');
+const v_rifier = require('../..');
+let myVerifier = null;
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 
 const undefinedVariable = undefined;
 
@@ -106,7 +111,7 @@ const static_data = [
 
 static_data.forEach(item => {
   test('Specific .isPort  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier.isPort(item.input)).toEqual(item.expect);
+    expect(await myVerifier.isPort(item.input)).toEqual(item.expect);
   });
 });
 
@@ -114,9 +119,9 @@ static_data.forEach(item => {
 test('confirming all ports', async () => {
   for (let i = -10000; i < 100000; i++) {
     if (0 < i && i < 65536) {
-      expect(await v_rifier.isPort(i)).toEqual(true);
+      expect(await myVerifier.isPort(i)).toEqual(true);
     } else {
-      expect(await v_rifier.isPort(i)).toEqual(false);
+      expect(await myVerifier.isPort(i)).toEqual(false);
     }
   }
 });

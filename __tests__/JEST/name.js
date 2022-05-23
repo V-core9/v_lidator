@@ -1,9 +1,14 @@
-const v_rifier  = require('../data/v_rifier');
+const v_rifier = require('../..');
+let myVerifier = null;
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 const static_data = require("../data/name.list");
 
 static_data.forEach(item => {
   test('NAME  ?? [ ' + item.input + ' ]', async () => {
-    expect(await v_rifier.isName(item.input)).toEqual(item.expect);
+    expect(await myVerifier.isName(item.input)).toEqual(item.expect);
   });
 });
 
@@ -19,6 +24,6 @@ for (var i = 0; i < test_count; i++) {
 
 fItems.forEach(item => {
   test('Faker Name : ' + item, async () => {
-    expect(await v_rifier.isName(item)).toEqual(true);
+    expect(await myVerifier.isName(item)).toEqual(true);
   });
 });

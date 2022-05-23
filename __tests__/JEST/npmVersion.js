@@ -1,4 +1,9 @@
-const v_rifier = require('../data/v_rifier');
+const v_rifier = require('../..');
+let myVerifier = null;
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 
 const undefinedVariable = undefined;
 
@@ -112,6 +117,6 @@ const static_data = [
 
 static_data.forEach(item => {
   test('isNpmVersion  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier.isNpmVersion(item.input)).toEqual(item.expect);
+    expect(await myVerifier.isNpmVersion(item.input)).toEqual(item.expect);
   });
 });

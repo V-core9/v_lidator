@@ -1,4 +1,9 @@
-const v_rifier = require('../data/v_rifier');
+const v_rifier = require('../..');
+let myVerifier = null;
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 
 const undefinedVariable = undefined;
 
@@ -104,6 +109,6 @@ const static_data = [
 
 static_data.forEach(item => {
   test('isObject  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier.isObject(item.input)).toEqual(item.expect);
+    expect(await myVerifier.isObject(item.input)).toEqual(item.expect);
   });
 });

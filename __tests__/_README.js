@@ -2,38 +2,38 @@
 const v_rifier = require('..');
 
 (async () => {
-  await v_rifier.loadBuiltIns();
+  let myVerifier = await v_rifier();
 
-  console.log("true : ", await v_rifier.isArray([1, 2, 3])); //> true
+  console.log("true : ", await myVerifier.isArray([1, 2, 3])); //> true
 
-  console.log("false : ", await v_rifier.isArray(true)); //> false
-
-
-
-  console.log("true : ", await v_rifier.isBool(true)); //> true
-  console.log("true : ", await v_rifier.isBool(false)); //> true
-  console.log("true : ", await v_rifier('bool', true)); //> true
-  console.log("true : ", await v_rifier('bool', false)); //> true
-
-  console.log("false : ", await v_rifier.isBool(112)); //> false
-  console.log("false : ", await v_rifier('bool', 0)); //> false
-  console.log("false : ", await v_rifier.isBool("true")); //> false
-  console.log("false : ", await v_rifier('bool', "true")); //> false
+  console.log("false : ", await myVerifier.isArray(true)); //> false
 
 
 
-  console.log("true : ", await v_rifier.isEmail('slavko.vuletic92@gmail.com'));
-  console.log("true : ", await v_rifier('email', 'slavko.vuletic92@gmail.com'));
+  console.log("true : ", await myVerifier.isBool(true)); //> true
+  console.log("true : ", await myVerifier.isBool(false)); //> true
+  console.log("true : ", await myVerifier('bool', true)); //> true
+  console.log("true : ", await myVerifier('bool', false)); //> true
+
+  console.log("false : ", await myVerifier.isBool(112)); //> false
+  console.log("false : ", await myVerifier('bool', 0)); //> false
+  console.log("false : ", await myVerifier.isBool("true")); //> false
+  console.log("false : ", await myVerifier('bool', "true")); //> false
+
+
+
+  console.log("true : ", await myVerifier.isEmail('slavko.vuletic92@gmail.com'));
+  console.log("true : ", await myVerifier('email', 'slavko.vuletic92@gmail.com'));
 
 
   const sampleFunc = async () => {
     return console.log('yea');
   };
 
-  console.log("true : ", await v_rifier.isFunction(sampleFunc)); //> true
-  console.log("true : ", await v_rifier('function', sampleFunc )); //> true
+  console.log("true : ", await myVerifier.isFunction(sampleFunc)); //> true
+  console.log("true : ", await myVerifier('function', sampleFunc )); //> true
 
-  console.log("false : ", await v_rifier.isFunction(11)); //> false
-  console.log("false : ", await v_rifier('function', 'function' )); //> false
+  console.log("false : ", await myVerifier.isFunction(11)); //> false
+  console.log("false : ", await myVerifier('function', 'function' )); //> false
 
 })();

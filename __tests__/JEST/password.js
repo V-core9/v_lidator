@@ -1,9 +1,14 @@
-const v_rifier  = require('../data/v_rifier');
+const v_rifier = require('../..');
+let myVerifier = null;
+(async () => {
+  myVerifier = await v_rifier();
+})();
+
 const static_data = require("../data/password.list");
 
 static_data.forEach(item => {
   test('PASSWORD  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await v_rifier.isPassword(item.input, item.confirm)).toEqual((item.expect) ? true : false);
+    expect(await myVerifier.isPassword(item.input, item.confirm)).toEqual((item.expect) ? true : false);
   });
 });
 
@@ -19,6 +24,6 @@ for (var i = 0; i < test_count; i++) {
 
 fItems.forEach(item => {
   test('Faker Password : ' + item, async () => {
-    expect(await v_rifier.isPassword(item, item)).toEqual(true);
+    expect(await myVerifier.isPassword(item, item)).toEqual(true);
   });
 });
