@@ -1,6 +1,7 @@
 module.exports = async function v_rifier(options = {}) {
   
-  const typeNameHandle = require('./helpers/typeNameHandle');
+  const typeNameHandle = require('./helpers/createFunctionName');
+  const getNameFromFunction = require('./helpers/getNameFromFunction');
 
   let builtIns = (typeof options.builtIns === 'boolean') ? options.builtIns : true;
 
@@ -38,8 +39,7 @@ module.exports = async function v_rifier(options = {}) {
     var types = [];
     for (var type in verify) {
       if (verify[type].custom === true) {
-        let oldName = type.replace('is', '');
-        types.push(oldName.charAt(0).toLowerCase() + oldName.slice(1));
+        types.push(await getNameFromFunction(type));
       }
     }
     return types;
