@@ -53,6 +53,7 @@ module.exports = async function v_rifier(options = {}) {
       await verify.register(type, coreTypes[type]);
     }
   }
-  
+
   return verify;
+
 };
