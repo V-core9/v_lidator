@@ -1,8 +1,4 @@
-const v_rifier = require('../..');
-let myVerifier = null;
-(async () => {
-  myVerifier = await v_rifier();
-})();
+let myVerifier = require('../..')();
 
 
 const undefinedVariable = undefined;

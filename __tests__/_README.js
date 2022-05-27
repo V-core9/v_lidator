@@ -1,8 +1,7 @@
-
 const v_rifier = require('..');
+const myVerifier = v_rifier();
 
 (async () => {
-  let myVerifier = await v_rifier();
 
   console.log("true : ", await myVerifier.isArray([1, 2, 3])); //> true
 

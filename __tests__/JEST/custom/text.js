@@ -1,16 +1,9 @@
-const v_rifier = require('../../..');
-
-let testVerifier = null;
-
-(async () => {
-  testVerifier = await v_rifier();
-})();
-
+const testVerifier = require('../../..')({ builtIns: false });
 
 
 test('custom limiter  ?? [ -2000 <> 2000 ]\n', async () => {
 
-  expect(await testVerifier.register('pageContent', async (value) => (typeof value === 'string' && value.length > 0 && value.length <= 256000))).toBe(true);
+  expect(testVerifier.register('pageContent', async (value) => (typeof value === 'string' && value.length > 0 && value.length <= 256000))).toBe(true);
 
 
   expect(await testVerifier.isPageContent(1000)).toBe(false);

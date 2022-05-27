@@ -1,13 +1,7 @@
-const v_rifier = require('../..');
+const v_rifier = require('../../');
 
-let myVerifier = null;
-let myEmptyVerifier = null;
-
-(async () => {
-  myVerifier = await v_rifier();
-  myEmptyVerifier = await v_rifier({ builtIns: false });
-})();
-
+let myVerifier = v_rifier();
+let myEmptyVerifier = v_rifier({ builtIns: false });
 
 
 const core_types = require('../../src/core_types');

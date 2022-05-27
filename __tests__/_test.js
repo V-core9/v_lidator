@@ -1,17 +1,11 @@
-const v_rifier = require('../src');
+let myVerifier = require('../src')();
 
 (async () => {
-
-  console.log(v_rifier);
-
-  let myVerifier = await v_rifier();
 
   console.log(myVerifier.toString());
 
   console.log('string', await myVerifier('string', 12312312312));
   console.log('bool', await myVerifier('bool', 12312312312));
-
-
 
 
   console.log(myVerifier);

@@ -1,8 +1,6 @@
 const v_rifier = require('../..');
-let myVerifier = null;
-(async () => {
-  myVerifier = await v_rifier();
-})();
+
+let myVerifier = v_rifier();
 
 const static_data = require("../data/name.list");
 

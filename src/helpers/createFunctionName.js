@@ -1,3 +1,3 @@
-module.exports = async (val) => {
-  return 'is' + val.charAt(0).toUpperCase() + val.slice(1);
+module.exports = (name) => {
+  return 'is' + name.charAt(0).toUpperCase() + name.slice(1);
 };

@@ -1,11 +1,10 @@
 
-const v_rifier = require('..');
+const demoVerifier = require('..')();
 
 (async () => {
-  let demoVerifier = await v_rifier();
 
   // Create a custom type
-  console.log(await demoVerifier.register('customType', async (value) => (await demoVerifier('number', value) && value > 0))); //> true
+  console.log(demoVerifier.register('customType', async (value) => (await demoVerifier('number', value) && value > 0))); //> true
 
   // Or other way...
   console.log(await demoVerifier.isCustomType(123)); //> true
