@@ -1,6 +1,4 @@
-const v_rifier = require('../..');
-
-let myVerifier = v_rifier();
+let myVerifier = require('../..')();
 
 const static_data = require("../data/name.list");
 
