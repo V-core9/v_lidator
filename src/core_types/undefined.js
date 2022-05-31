@@ -1,1 +1,1 @@
-module.exports = isUndefined = async (value) => (typeof value === 'undefined');
+module.exports = async (value) => (typeof value === 'undefined');

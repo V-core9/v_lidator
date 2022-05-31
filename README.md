@@ -7,9 +7,15 @@ Data V[a]rifier => v_rifier 😁
 ## 📚 How to use
 
     const v_rifier = require('v_rifier');
-    let myVerifier = await v_rifier();
+    let myVerifier = v_rifier();
 
-Built-in modules:
+### or use import
+
+    import v_rifier from 'v_rifier';
+    let myVerifier = v_rifier();
+
+## Built-in functions
+
 > NOTE: Don't forget to add **await** before any of the following verification methods are called.
 
 1. **array**  

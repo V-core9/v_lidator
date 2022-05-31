@@ -1,6 +1,6 @@
 const { isEmpty } = require('v_is_empty_value');
 
-module.exports = isEmail = async (value) => {
+module.exports = async (value) => {
   if (await isEmpty(value)) return false;
 
   const emailRegex = /^[A-Za-z0-9][A-Za-z0-9._]+[A-Za-z0-9_]+@+[A-Za-z0-9][^\s@]+\.[^\s@]+$/;

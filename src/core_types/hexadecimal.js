@@ -1,4 +1,4 @@
-module.exports = isHexadecimal = async (value) => {
+module.exports = async (value) => {
   if (typeof value === 'string') {
     const hexadecimalRegex = /^[0-9a-fA-F]+$/;
     return hexadecimalRegex.test(value);

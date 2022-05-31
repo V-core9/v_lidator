@@ -1,1 +1,1 @@
-module.exports = isNull = async (value) => (value === null);
+module.exports = async (value) => (value === null);

@@ -1,1 +1,1 @@
-module.exports = isArray = async (value) => Array.isArray(value);
+module.exports = async (value) => Array.isArray(value);

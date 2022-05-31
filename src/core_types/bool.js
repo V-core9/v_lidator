@@ -1,1 +1,1 @@
-module.exports = isBool = async (value) => (typeof value === 'boolean');
+module.exports = async (value) => (typeof value === 'boolean');

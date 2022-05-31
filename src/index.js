@@ -1,7 +1,8 @@
-module.exports = function v_rifier(options = {}) {
-  
-  const createFunctionName = require('./helpers/createFunctionName');
-  const getNameFromFunction = require('./helpers/getNameFromFunction');
+const createFunctionName = require('./helpers/createFunctionName');
+const getNameFromFunction = require('./helpers/getNameFromFunction');
+const coreTypes = require('./core_types');
+
+function v_rifier(options = {}) {
 
   let builtIns = (typeof options.builtIns === 'boolean') ? options.builtIns : true;
 
@@ -48,7 +49,6 @@ module.exports = function v_rifier(options = {}) {
 
   //? Maybe Load BuiltIns
   if (builtIns) {
-    const coreTypes = require('./core_types');
     for (let type in coreTypes) {
       verify.register(type, coreTypes[type]);
     }
@@ -56,4 +56,7 @@ module.exports = function v_rifier(options = {}) {
 
   return verify;
 
-};
+}
+
+module.exports = v_rifier;
+module.exports.default = v_rifier;

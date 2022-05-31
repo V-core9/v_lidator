@@ -1,1 +1,1 @@
-module.exports = isString = async (value) => (typeof value === 'string');
+module.exports = async (value) => (typeof value === 'string');

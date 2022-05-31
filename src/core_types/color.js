@@ -6,7 +6,7 @@ let isNumber = require('./number');
 const validateRGB = async (r, g, b) => (await isInteger(r) && 0 <= r && r <= 255) && (await isInteger(g) && 0 <= g && g <= 255) && (await isInteger(b) && 0 <= b && b <= 255);
 const validateRGBA = async (r, g, b, a) => (await validateRGB(r, g, b)) && (await isNumber(a) && 0 <= a && a <= 1);
 
-module.exports = isColor = async (val) => {
+module.exports = async (val) => {
   if (await isString(val)) {
     if (val.charAt(0) === '#') {
       let hexColor = val.substring(1) ;
