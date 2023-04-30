@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Simple to use and quite flexible Data Validator/Verifier for Web and Node.js applications.",
   "main": "./dist/index.js",
+  "types": "./index.d.ts",
   "scripts": {
     "test": "tsc --build && jest",
     "build": "tsc --build",
