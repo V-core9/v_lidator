@@ -2,8 +2,6 @@
 
 Data V[a]rifier => v_rifier 😁
 
-## 🔻 Beta STATE 001...0 xD
-
 ## 📚 How to use
 
     const v_rifier = require('v_rifier');
@@ -159,7 +157,6 @@ username Checker
         myVerifier.isUsername( 123 ) //> true
         myVerifier('username', 123 ) //> true
 
-
 ## 🚀 Advanced Usage
 
 ### 1. Register Custom Type
@@ -215,7 +212,7 @@ After loading module, you can create your custom validation type without even lo
 
     })();
 
-> Example Location: Example is located in **/__tests__/_README.advanced.js**
+> Example Location: Example is located in **/**tests**/_README.advanced.js**
 
 ### 5. Or a combination of built-ins and custom types
 
@@ -237,8 +234,7 @@ Main usecase basically, where you would want to check on something like a value 
 
     })();
 
-> Example Location: Example is located in **/__tests__/_README.advanced-combined.js**
-
+> Example Location: Example is located in **/**tests**/_README.advanced-combined.js**
 
 ## **✅ Tests and Coverage with Jest**
 

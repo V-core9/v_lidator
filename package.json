@@ -1,6 +1,6 @@
 {
   "name": "v_rifier",
-  "version": "0.2.4",
+  "version": "1.0.0",
   "description": "Simple to use and quite flexible Data Validator/Verifier for Web and Node.js applications.",
   "main": "./dist/index.js",
   "scripts": {
