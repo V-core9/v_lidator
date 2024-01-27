@@ -1,23 +1,9 @@
-.editorconfig
-.git
-.gitignore
-.jshintrc
-.npmignore
 .vscode
-__tests__
-__tests__/
+.git
 
-./__tests__/*
-
+node_modules
 coverage
-coverage/
-./coverage/*
-coverage.png
-
-jest.config.js
-LICENSE
-node_modules/
-package-lock.json
+__tests__
 
 .editorconfig
 .jshintrc
