@@ -1,49 +1,46 @@
-let myVerifier = require('../..')();
+let myVerifier = require('../..')()
 
-
-const undefinedVariable = undefined;
+const undefinedVariable = undefined
 
 const static_data = [
-
   {
     input: undefinedVariable,
-    expect: true,
+    expect: true
   },
 
   {
     input: undefined,
-    expect: true,
+    expect: true
   },
 
   {
     input: 111,
-    expect: false,
+    expect: false
   },
 
   {
     input: null,
-    expect: false,
+    expect: false
   },
 
   {
-    input: "",
-    expect: false,
+    input: '',
+    expect: false
   },
 
   {
     input: false,
-    expect: false,
+    expect: false
   },
 
   {
     input: 0,
-    expect: false,
-  },
+    expect: false
+  }
+]
 
-];
-
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('UNDEFINED  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await myVerifier.isUndefined(item.input)).toEqual(item.expect);
-  });
-});
+    expect(await myVerifier.isUndefined(item.input)).toEqual(item.expect)
+  })
+})

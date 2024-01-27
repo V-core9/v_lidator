@@ -1,5 +1,5 @@
-import v_rifier from '../src/index.js';
+import v_rifier from '../src/index.js'
 
-const myVerifier = v_rifier();
+const myVerifier = v_rifier()
 
-console.log(myVerifier);
+console.log(myVerifier)

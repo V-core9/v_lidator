@@ -1,19 +1,18 @@
-let myVerifier = require('../..')();
+let myVerifier = require('../..')()
 
-const static_data = require("../data/name.list");
-
+const static_data = require('../data/name.list')
 
 // Dynamic Part
-var faker = require('faker');
-const { test_count } = require('../data/_SETTINGS');
+var faker = require('faker')
+const { test_count } = require('../data/_SETTINGS')
 
-var fItems = [];
+var fItems = []
 for (var i = 0; i < test_count; i++) {
-  fItems.push(faker.lorem.paragraphs());
+  fItems.push(faker.lorem.paragraphs())
 }
 
-fItems.forEach(item => {
+fItems.forEach((item) => {
   test('Faker Text : ' + item, async () => {
-    expect(await myVerifier.isString(item)).toEqual(true);
-  });
-});
+    expect(await myVerifier.isString(item)).toEqual(true)
+  })
+})

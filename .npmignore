@@ -19,7 +19,21 @@ LICENSE
 node_modules/
 package-lock.json
 
-./src/core_types/.*.js
+.editorconfig
+.jshintrc
+.gitignore
 
-.*.js
-./**/.*.js
+sample-express.js
+
+src
+
+.eslintrc
+.eslintrc.json
+.eslintrc.yml
+.eslintrc.js
+
+rollup.config.js
+jest.config.js
+.gitignore
+package-lock.json
+.npmignore

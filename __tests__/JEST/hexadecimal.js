@@ -1,89 +1,82 @@
-let myVerifier = require('../..')();
+let myVerifier = require('../..')()
 
-
-const undefinedVariable = undefined;
+const undefinedVariable = undefined
 
 const static_data = [
-
   {
     input: undefinedVariable,
-    expect: false,
+    expect: false
   },
 
   {
     input: undefined,
-    expect: false,
+    expect: false
   },
 
   {
     input: 111,
-    expect: false,
+    expect: false
   },
 
   {
     input: null,
-    expect: false,
+    expect: false
   },
 
   {
-    input: "",
-    expect: false,
+    input: '',
+    expect: false
   },
 
   {
     input: false,
-    expect: false,
+    expect: false
   },
 
   {
     input: true,
-    expect: false,
+    expect: false
   },
 
   {
     input: 0,
-    expect: false,
-  },
-
-
-  {
-    input: "Fa",
-    expect: true,
+    expect: false
   },
 
   {
-    input: "X123",
-    expect: false,
+    input: 'Fa',
+    expect: true
   },
 
   {
-    input: "123456789",
-    expect: true,
+    input: 'X123',
+    expect: false
   },
 
   {
-    input: "FF00ca",
-    expect: true,
+    input: '123456789',
+    expect: true
   },
-
 
   {
-    input: "ABC",
-    expect: true,
+    input: 'FF00ca',
+    expect: true
   },
 
+  {
+    input: 'ABC',
+    expect: true
+  }
+]
 
-];
-
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('isHexadecimal  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await myVerifier.isHexadecimal(item.input)).toEqual(item.expect);
-  });
-});
+    expect(await myVerifier.isHexadecimal(item.input)).toEqual(item.expect)
+  })
+})
 
-
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('"hexadecimal"  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await myVerifier("hexadecimal", item.input)).toEqual(item.expect);
-  });
-});
+    expect(await myVerifier('hexadecimal', item.input)).toEqual(item.expect)
+  })
+})

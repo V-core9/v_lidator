@@ -1,61 +1,58 @@
-let myVerifier = require('../..')();
+let myVerifier = require('../..')()
 
-
-const undefinedVariable = undefined;
+const undefinedVariable = undefined
 
 const static_data = [
-
   {
     input: undefinedVariable,
-    expect: false,
+    expect: false
   },
 
   {
     input: undefined,
-    expect: false,
+    expect: false
   },
 
   {
     input: 111,
-    expect: false,
+    expect: false
   },
 
   {
     input: null,
-    expect: false,
+    expect: false
   },
 
   {
-    input: "",
-    expect: false,
+    input: '',
+    expect: false
   },
 
   {
     input: false,
-    expect: false,
+    expect: false
   },
 
   {
     input: 0,
-    expect: false,
+    expect: false
   },
-
 
   {
     input: async () => console.log('yea'),
-    expect: true,
+    expect: true
   },
 
   {
     input: function () {
-      console.log('yea');
+      console.log('yea')
     },
-    expect: true,
+    expect: true
   }
-];
+]
 
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('isFunction  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await myVerifier.isFunction(item.input)).toEqual(item.expect);
-  });
-});
+    expect(await myVerifier.isFunction(item.input)).toEqual(item.expect)
+  })
+})

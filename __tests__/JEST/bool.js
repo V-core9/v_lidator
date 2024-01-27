@@ -1,61 +1,57 @@
-let myVerifier = require('../..')();
+let myVerifier = require('../..')()
 
-
-const undefinedVariable = undefined;
+const undefinedVariable = undefined
 
 const static_data = [
-
   {
     input: undefinedVariable,
-    expect: false,
+    expect: false
   },
 
   {
     input: undefined,
-    expect: false,
+    expect: false
   },
 
   {
     input: 111,
-    expect: false,
+    expect: false
   },
 
   {
     input: null,
-    expect: false,
+    expect: false
   },
 
   {
-    input: "",
-    expect: false,
+    input: '',
+    expect: false
   },
 
   {
     input: false,
-    expect: true,
+    expect: true
   },
 
   {
     input: true,
-    expect: true,
+    expect: true
   },
 
   {
     input: 0,
-    expect: false,
-  },
-  
-];
+    expect: false
+  }
+]
 
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('isBool  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await myVerifier.isBool(item.input)).toEqual(item.expect);
-  });
-});
+    expect(await myVerifier.isBool(item.input)).toEqual(item.expect)
+  })
+})
 
-
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('"bool"  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await myVerifier("bool", item.input)).toEqual(item.expect);
-  });
-});
+    expect(await myVerifier('bool', item.input)).toEqual(item.expect)
+  })
+})
