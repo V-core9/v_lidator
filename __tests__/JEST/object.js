@@ -1,72 +1,68 @@
-let myVerifier = require('../..')();
+let myVerifier = require('../..')()
 
-
-const undefinedVariable = undefined;
+const undefinedVariable = undefined
 
 const static_data = [
-
   {
     input: undefinedVariable,
-    expect: false,
+    expect: false
   },
 
   {
     input: undefined,
-    expect: false,
+    expect: false
   },
 
   {
     input: 111,
-    expect: false,
+    expect: false
   },
 
   {
     input: null,
-    expect: false,
+    expect: false
   },
 
   {
-    input: "",
-    expect: false,
+    input: '',
+    expect: false
   },
 
   {
     input: false,
-    expect: false,
+    expect: false
   },
 
   {
     input: true,
-    expect: false,
+    expect: false
   },
 
   {
     input: 0,
-    expect: false,
+    expect: false
   },
-
 
   {
     input: async () => console.log('yea'),
-    expect: false,
+    expect: false
   },
 
   {
     input: function () {
-      console.log('yea');
+      console.log('yea')
     },
-    expect: false,
+    expect: false
   },
-
 
   {
     input: [],
-    expect: true,
+    expect: true
   },
 
   {
     input: [1, 2, 3, 4, 5],
-    expect: true,
+    expect: true
   },
 
   {
@@ -74,37 +70,37 @@ const static_data = [
       {
         a: 1,
         b: 2,
-        c: 3,
+        c: 3
       },
       {
-        a: 4,
+        a: 4
       }
     ],
-    expect: true,
+    expect: true
   },
 
   {
     input: {
       a: 1,
       b: 2,
-      c: 3,
+      c: 3
     },
-    expect: true,
+    expect: true
   },
 
   {
     input: {
       a: 1,
       input: function () {
-        console.log('yea');
+        console.log('yea')
       }
     },
-    expect: true,
+    expect: true
   }
-];
+]
 
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('isObject  ?? [ ' + item.input + ' ]\n', async () => {
-    expect(await myVerifier.isObject(item.input)).toEqual(item.expect);
-  });
-});
+    expect(await myVerifier.isObject(item.input)).toEqual(item.expect)
+  })
+})

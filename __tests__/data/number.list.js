@@ -1,22 +1,22 @@
 module.exports = [
   {
-    input: "Slavko",
+    input: 'Slavko',
     expect: false
   },
   {
-    input: "Sla Vu",
+    input: 'Sla Vu',
     expect: false
   },
   {
-    input: "Sla. Vu",
+    input: 'Sla. Vu',
     expect: false
   },
   {
-    input: "Sla@Vu",
+    input: 'Sla@Vu',
     expect: false
   },
   {
-    input: "Sla",
+    input: 'Sla',
     expect: false
   },
   {
@@ -32,7 +32,7 @@ module.exports = [
     expect: true
   },
   {
-    input: 123456789012345678901234567890.12345678901234567890,
+    input: 123456789012345678901234567890.1234567890123456789,
     expect: true
   },
   {
@@ -42,5 +42,5 @@ module.exports = [
   {
     input: false,
     expect: false
-  },
-];
+  }
+]

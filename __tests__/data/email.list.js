@@ -36,7 +36,7 @@ module.exports = [
     expect: false
   },
   {
-    input: 'De\lmo',
+    input: 'Delmo',
     expect: false
   },
   {
@@ -139,7 +139,7 @@ module.exports = [
     input: 'slavko.@gmail.com',
     expect: false
   },
-  
+
   {
     input: 'slavko@.gmail.com',
     expect: false
@@ -163,7 +163,5 @@ module.exports = [
   {
     input: 'slavko@v-core9.com',
     expect: true
-  },
-  
-];
-
+  }
+]

@@ -1,3 +1,3 @@
 module.exports = {
-  test_count: 5000,
-};
+  test_count: 5000
+}

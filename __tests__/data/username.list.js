@@ -4,113 +4,112 @@ module.exports = [
     expect: false
   },
   {
-    input: ".",
+    input: '.',
     expect: false
   },
   {
-    input:"Demo",
+    input: 'Demo',
     expect: true
   },
   {
-    input:"Demo..",
+    input: 'Demo..',
     expect: true
   },
   {
-    input:"z.",
+    input: 'z.',
     expect: false
   },
   {
-    input:"..",
+    input: '..',
     expect: false
   },
   {
-    input:".._",
+    input: '.._',
     expect: false
   },
   {
-    input:"De_",
-    expect:true
-  },
-  {
-    input:"De/.mo",
-    expect: false
-  },
-  {
-    input:"De\lmo",
+    input: 'De_',
     expect: true
   },
   {
-    input:"De\\mo",
+    input: 'De/.mo',
     expect: false
   },
   {
-    input:"Demo\\",
+    input: 'Delmo',
+    expect: true
+  },
+  {
+    input: 'De\\mo',
     expect: false
   },
   {
-    input:"Demo_____1",
-    expect: true
-  },
-  {
-    input:"Demo123455367345531231264362352341234123123123123",
+    input: 'Demo\\',
     expect: false
   },
   {
-    input:"Demo@@3123@mail.com",
+    input: 'Demo_____1',
+    expect: true
+  },
+  {
+    input: 'Demo123455367345531231264362352341234123123123123',
     expect: false
   },
   {
-    input:"mail.com",
-    expect: true
-  },
-  {
-    input:"XZCZXCSDAFSAFAl__",
-    expect: true
-  },
-  
-  {
-    input:"WEQ23652mail.com",
-    expect: true
-  },
-  
-  {
-    input:"a14219407124am",
-    expect: true
-  },
-  
-  {
-    input:"214219407124@mail.com",
+    input: 'Demo@@3123@mail.com',
     expect: false
   },
-  
   {
-    input:"QWUE.OW.Q.IN.ANDPIn@mail.com",
-    expect: false
-  },
-  
-  {
-    input:"demo53266@mail.com",
-    expect: false
-  },
-  
-  {
-    input:"De_1",
+    input: 'mail.com',
     expect: true
   },
-  
   {
-    input:"De_V",
+    input: 'XZCZXCSDAFSAFAl__',
     expect: true
   },
-  
+
   {
-    input:"Vs_",
+    input: 'WEQ23652mail.com',
     expect: true
   },
-  
+
   {
-    input:"A",
+    input: 'a14219407124am',
+    expect: true
+  },
+
+  {
+    input: '214219407124@mail.com',
     expect: false
   },
-  
-];
+
+  {
+    input: 'QWUE.OW.Q.IN.ANDPIn@mail.com',
+    expect: false
+  },
+
+  {
+    input: 'demo53266@mail.com',
+    expect: false
+  },
+
+  {
+    input: 'De_1',
+    expect: true
+  },
+
+  {
+    input: 'De_V',
+    expect: true
+  },
+
+  {
+    input: 'Vs_',
+    expect: true
+  },
+
+  {
+    input: 'A',
+    expect: false
+  }
+]

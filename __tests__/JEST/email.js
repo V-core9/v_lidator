@@ -1,26 +1,24 @@
-let myVerifier = require('../..')();
+let myVerifier = require('../..')()
 
+const static_data = require('../data/email.list')
 
-const static_data = require("../data/email.list");
-
-static_data.forEach(item => {
+static_data.forEach((item) => {
   test('EMAIL  ?? [ ' + item.input + ' ]', async () => {
-    expect(await myVerifier.isEmail(item.input)).toEqual((item.expect === true) ? true : false);
-  });
-});
-
+    expect(await myVerifier.isEmail(item.input)).toEqual(item.expect === true ? true : false)
+  })
+})
 
 // Dynamic Part
-var faker = require('faker');
-const { test_count } = require('../data/_SETTINGS');
+var faker = require('faker')
+const { test_count } = require('../data/_SETTINGS')
 
-var fItems = [];
+var fItems = []
 for (var i = 0; i < test_count; i++) {
-  fItems.push(faker.internet.email());
+  fItems.push(faker.internet.email())
 }
 
-fItems.forEach(item => {
+fItems.forEach((item) => {
   test('Faker Mail : ' + item, async () => {
-    expect(await myVerifier.isEmail(item)).toEqual(true);
-  });
-});
+    expect(await myVerifier.isEmail(item)).toEqual(true)
+  })
+})
