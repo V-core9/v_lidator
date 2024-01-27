@@ -235,7 +235,3 @@ Main usecase basically, where you would want to check on something like a value 
     })();
 
 > Example Location: Example is located in **/**tests**/_README.advanced-combined.js**
-
-## **✅ Tests and Coverage with Jest**
-
-![Test and Coverage with Jest](coverage.png)
