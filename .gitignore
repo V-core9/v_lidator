@@ -147,3 +147,8 @@ package-lock.json
 **/package-lock.json
 
 #! V9 Custom Ignore
+package-lock.json
+types
+coverage
+dist
+node_modules
